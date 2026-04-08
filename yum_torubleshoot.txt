@@ -59,3 +59,5 @@ except KeyboardInterrupt, e:
     sys.exit(1)
 [root@squid ~]#
 
+
+python -c "import sys; sys.path.insert(0, '/usr/share/yum-cli'); import yummain; print('OK')"
