@@ -61,3 +61,31 @@ except KeyboardInterrupt, e:
 
 
 python -c "import sys; sys.path.insert(0, '/usr/share/yum-cli'); import yummain; print('OK')"
+
+
+
+
+
+===================
+[root@squid ~]# locate yummain
+/usr/share/bash-completion/completions/yummain.py
+/usr/share/yum-cli/yummain.py
+/usr/share/yum-cli/yummain.pyc
+[root@squid ~]# ll /usr/share/bash-completion/completions/yummain.py
+lrwxrwxrwx 1 root root 3 Apr  8 13:19 /usr/share/bash-completion/completions/yummain.py -> yum
+[root@squid ~]# ll /usr/share/yum-cli/yummain.py
+-rwxr-xr-x 1 root root 12630 Apr 16  2020 /usr/share/yum-cli/yummain.py
+[root@squid ~]# ll /usr/share/yum-cli/yummain.pyc
+-rw-r--r-- 1 root root 10875 Apr 16  2020 /usr/share/yum-cli/yummain.pyc
+[root@squid ~]# echo $PYTHONPATH
+
+[root@squid ~]# python -c "import sys; sys.path.insert(0, '/usr/share/yum-cli'); import yummain; print('OK')"
+Traceback (most recent call last):
+  File "<string>", line 1, in <module>
+ImportError: No module named yummain
+[root@squid ~]#
+
+
+
+
+
