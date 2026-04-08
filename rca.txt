@@ -1,0 +1,466 @@
+[root@PRDCAPP5]/var/log/sa> sar -u -f sa09
+Linux 4.18.0-553.66.1.el8_10.x86_64 (PRDCAPP5)  04/09/2026      _x86_64_        (28 CPU)
+
+12:00:01 AM     CPU     %user     %nice   %system   %iowait    %steal     %idle
+12:10:01 AM     all      3.49      0.00      0.97     10.41      0.00     85.13
+12:20:01 AM     all      3.21      0.00      0.86     10.43      0.00     85.50
+12:30:01 AM     all      3.18      0.00      0.67     10.48      0.00     85.66
+12:40:01 AM     all      3.44      0.00      0.85     10.50      0.00     85.21
+12:50:01 AM     all      3.43      0.00      0.61     10.52      0.00     85.44
+01:00:01 AM     all      0.85      0.00      0.56     10.57      0.00     88.01
+01:10:01 AM     all      0.58      0.00      0.62     10.60      0.00     88.20
+01:20:01 AM     all      0.52      0.00      0.57     10.60      0.00     88.31
+01:30:01 AM     all      0.54      0.00      0.57     10.59      0.00     88.30
+01:40:01 AM     all      0.74      0.00      0.67     10.58      0.00     88.02
+01:50:01 AM     all      1.22      0.00      0.76     10.46      0.00     87.56
+02:00:01 AM     all      0.54      0.00      0.54     10.61      0.00     88.31
+02:10:01 AM     all      2.94      0.00      2.87     10.10      0.00     84.09
+02:20:01 AM     all      0.74      0.00      1.03     10.49      0.00     87.73
+02:36:54 AM     all      5.71      0.00     46.46     13.21      0.00     34.62
+03:32:03 AM     all      6.32      0.00     93.13      0.37      0.00      0.18
+Average:        all      3.30      0.00     28.49      8.08      0.00     60.13
+
+03:34:02 AM  LINUX RESTART      (28 CPU)
+
+03:40:01 AM     CPU     %user     %nice   %system   %iowait    %steal     %idle
+03:50:00 AM     all      1.71      0.00      0.70      0.00      0.00     97.58
+Average:        all      1.71      0.00      0.70      0.00      0.00     97.58
+[root@PRDCAPP5]/var/log/sa> sar -r -f sa09
+Linux 4.18.0-553.66.1.el8_10.x86_64 (PRDCAPP5)  04/09/2026      _x86_64_        (28 CPU)
+
+12:00:01 AM kbmemfree   kbavail kbmemused  %memused kbbuffers  kbcached  kbcommit   %commit  kbactive   kbinact   kbdirty
+12:10:01 AM   7216288 169302272 223324480     96.87      2492 154611880  78105460     26.24  17602484 184094700       668
+12:20:01 AM   7359552 169205088 223181216     96.81      2492 154370784  78372040     26.33  17581864 183975288      2368
+12:30:01 AM   7369776 168893024 223170992     96.80      2492 154048492  78597748     26.41  17559580 183982436       700
+12:40:01 AM  20599040 181826872 209941728     91.06      2492 153753724  65599536     22.04  17550832 170793512      2324
+12:50:01 AM  20475104 181511640 210065664     91.12      2492 153570304  66065012     22.20  17538744 170923380      2740
+01:00:01 AM  42337324 203283992 188203444     81.64      2492 153480516  44338816     14.90  17535100 149113024      2476
+01:10:01 AM  42139252 203157876 188401516     81.72      2492 153552600  44506792     14.95  17633260 149198428       148
+01:20:01 AM  42126356 203171748 188414412     81.73      2492 153579212  44407300     14.92  17646536 149208400      2796
+01:30:01 AM  42108744 203160872 188432024     81.73      2492 153586216  44584412     14.98  17641304 149230988      2368
+01:40:01 AM  41946292 203071708 188594476     81.81      2492 153659412  44644496     15.00  17646388 149386008       220
+01:50:01 AM  45173168 206433588 185367600     80.41      2492 153793300  44397660     14.92  17651364 146162496      2712
+02:00:01 AM  45049276 206380916 185491492     80.46      2492 153864360  44519596     14.96  17652572 146286492      5832
+02:10:01 AM  43544500 205031476 186996268     81.11      2492 154026916  45912096     15.42  17712900 147708616      3792
+02:20:01 AM  43244348 204825844 187296420     81.24      2492 154121472  46159800     15.51  17720668 148013784      1988
+02:36:54 AM   1772400    766408 228768368     99.23         0   1671404 784811360    263.67  62593232 143718784       180
+03:32:03 AM   1842688    772924 228698080     99.20         0    189616 756771764    254.25 206950764    376704        48
+Average:     28394007 169424766 202146761     87.68      2180 134742513 144487118     48.54  32263600 148260815      1960
+
+03:34:02 AM  LINUX RESTART      (28 CPU)
+
+03:40:01 AM kbmemfree   kbavail kbmemused  %memused kbbuffers  kbcached  kbcommit   %commit  kbactive   kbinact   kbdirty
+03:50:00 AM 218936836 218997748  11603948      5.03      5320   1701172  30422032     10.22    580544   9194188      1912
+Average:    218936836 218997748  11603948      5.03      5320   1701172  30422032     10.22    580544   9194188      1912
+[root@PR
+
+
+
+
+[root@PRDCAPP5]/var/log/sa> sar -q -f sa09
+Linux 4.18.0-553.66.1.el8_10.x86_64 (PRDCAPP5)  04/09/2026      _x86_64_        (28 CPU)
+
+12:00:01 AM   runq-sz  plist-sz   ldavg-1   ldavg-5  ldavg-15   blocked
+12:10:01 AM         3      5355      4.08      4.16      4.23         3
+12:20:01 AM         5      5372      4.47      4.25      4.21         3
+12:30:01 AM         3      5358      3.73      4.01      4.14         3
+12:40:01 AM         6      5365      4.67      4.87      4.55         3
+12:50:01 AM         4      5372      3.99      4.21      4.35         3
+01:00:01 AM         2      5374      3.28      3.45      3.88         3
+01:10:01 AM         4      5382      3.32      3.30      3.60         3
+01:20:01 AM         1      5363      3.30      3.38      3.50         3
+01:30:01 AM         2      5373      4.14      4.32      4.01         3
+01:40:01 AM         2      5367      3.41      3.63      3.81         3
+01:50:01 AM         2      5329      3.42      3.52      3.67         3
+02:00:01 AM         3      5334      3.58      3.46      3.55         3
+02:10:01 AM         3      5372      4.45      4.75      4.30         3
+02:20:01 AM         4      5348      3.45      3.91      4.14         3
+02:36:54 AM      1162     66353   8184.31   7273.32   4121.45       624
+03:32:03 AM      1912     59394   8076.48   8067.22   7764.97       185
+Average:          195     12551   1019.63    962.24    746.40        53
+
+03:34:02 AM  LINUX RESTART      (28 CPU)
+
+03:40:01 AM   runq-sz  plist-sz   ldavg-1   ldavg-5  ldavg-15   blocked
+03:50:00 AM         3      5069      2.50      1.04      0.42         0
+04:00:01 AM         2      5055      1.32      1.94      1.37         0
+Average:            2      5062      1.91      1.49      0.90         0
+
+
+
+
+
+/var/log/messages
+Apr  9 02:28:01 PRDCAPP5 systemd[1]: Started Session 402338 of user root.
+Apr  9 02:28:03 PRDCAPP5 kernel: babx4464: page allocation failure: order:0, mode:0x10(__GFP_RECLAIMABLE), nodemask=(null),cpuset=/,mems_allowed=0
+Apr  9 02:28:03 PRDCAPP5 kernel: CPU: 22 PID: 1459740 Comm: babx4464 Kdump: loaded Tainted: P           OE     -------- -  - 4.18.0-553.66.1.el8_10.x86_64 #1
+Apr  9 02:28:03 PRDCAPP5 kernel: Hardware name: VMware, Inc. VMware Virtual Platform/440BX Desktop Reference Platform, BIOS 6.00 11/12/2020
+Apr  9 02:28:03 PRDCAPP5 kernel: Call Trace:
+Apr  9 02:28:03 PRDCAPP5 kernel: dump_stack+0x41/0x60
+Apr  9 02:28:03 PRDCAPP5 kernel: warn_alloc.cold.127+0x7b/0x108
+Apr  9 02:28:03 PRDCAPP5 kernel: __alloc_pages_slowpath+0xcb2/0xcd0
+Apr  9 02:28:03 PRDCAPP5 kernel: __alloc_pages_nodemask+0x2e2/0x330
+Apr  9 02:28:03 PRDCAPP5 kernel: new_slab+0x3f4/0x4f0
+Apr  9 02:28:03 PRDCAPP5 kernel: ___slab_alloc+0x3a3/0x950
+Apr  9 02:28:03 PRDCAPP5 kernel: ? bmhook_get_file_object_from_dentry_mnt+0x2f8/0x3b0 [bmhook]
+Apr  9 02:28:03 PRDCAPP5 kernel: ? bmhook_scan_enqueue+0x2c/0x230 [bmhook]
+Apr  9 02:28:03 PRDCAPP5 kernel: ? _cond_resched+0x15/0x30
+Apr  9 02:28:03 PRDCAPP5 kernel: ? mmput+0xf/0x130
+Apr  9 02:28:03 PRDCAPP5 kernel: ? bmhook_get_object+0x608/0xe70 [bmhook]
+Apr  9 02:28:03 PRDCAPP5 kernel: ? bmhook_scan_enqueue+0x2c/0x230 [bmhook]
+Apr  9 02:28:03 PRDCAPP5 kernel: kmem_cache_alloc+0x252/0x280
+Apr  9 02:28:03 PRDCAPP5 kernel: bmhook_scan_enqueue+0x2c/0x230 [bmhook]
+Apr  9 02:28:03 PRDCAPP5 kernel: __bmhook_send_event_common+0x49c/0xc30 [bmhook]
+Apr  9 02:28:03 PRDCAPP5 kernel: ? ktime_get_real_ts64+0x50/0xf0
+Apr  9 02:28:03 PRDCAPP5 kernel: bmhook_send_event_ext+0x93/0xe0 [bmhook]
+Apr  9 02:28:03 PRDCAPP5 kernel: tmbpf_send_event_ext+0xa/0x20 [bmhook]
+Apr  9 02:28:03 PRDCAPP5 kernel: ? bpf_lru_push_free+0xe2/0x130 [bmhook]
+Apr  9 02:28:03 PRDCAPP5 kernel: ? bmhook_prehook_handler+0x243/0x2e0 [bmhook]
+Apr  9 02:28:03 PRDCAPP5 kernel: ? tmhook_invoke_prehooks+0x41/0xb0 [tmhook]
+Apr  9 02:28:03 PRDCAPP5 kernel: ? tmhook_handler+0x18b/0x210 [tmhook]
+Apr  9 02:28:03 PRDCAPP5 kernel: ? do_syscall_64+0x5b/0x1a0
+Apr  9 02:28:03 PRDCAPP5 kernel: ? do_syscall_64+0x5b/0x1a0
+Apr  9 02:28:03 PRDCAPP5 kernel: ? entry_SYSCALL_64_after_hwframe+0x66/0xcb
+Apr  9 02:28:03 PRDCAPP5 kernel: Mem-Info:
+Apr  9 02:28:03 PRDCAPP5 kernel: active_anon:877140 inactive_anon:47854582 isolated_anon:0#012 active_file:503631 inactive_file:340837 isolated_file:30#012 unevictable:0 dirty:2290 writeback:0#012 slab_reclaimable:2065870 slab_unreclaimable:1925268#012 mapped:85159 shmem:1014006 pagetables:3018721 bounce:0#012 free:438778 free_pcp:379 free_cma:0
+Apr  9 02:28:03 PRDCAPP5 kernel: Node 0 active_anon:3508560kB inactive_anon:191418328kB active_file:2014524kB inactive_file:1363348kB unevictable:0kB isolated(anon):0kB isolated(file):120kB mapped:340636kB dirty:9160kB writeback:0kB shmem:4056024kB shmem_thp: 0kB shmem_pmdmapped: 0kB anon_thp: 2482176kB writeback_tmp:0kB kernel_stack:666428kB pagetables:12074884kB all_unreclaimable? no
+
+Apr  9 02:28:03 PRDCAPP5 kernel: active_anon:877140 inactive_anon:47854582 isolated_anon:0#012 active_file:503631 inactive_file:340837 isolated_file:30#012 unevictable:0 dirty:2290 writeback:0#012 slab_reclaimable:2065870 slab_unreclaimable:1925268#012 mapped:85159 shmem:1014006 pagetables:3018721 bounce:0#012 free:438778 free_pcp:379 free_cma:0
+Apr  9 02:28:03 PRDCAPP5 kernel: Node 0 active_anon:3508560kB inactive_anon:191418328kB active_file:2014524kB inactive_file:1363348kB unevictable:0kB isolated(anon):0kB isolated(file):120kB mapped:340636kB dirty:9160kB writeback:0kB shmem:4056024kB shmem_thp: 0kB shmem_pmdmapped: 0kB anon_thp: 2482176kB writeback_tmp:0kB kernel_stack:666428kB pagetables:12074884kB all_unreclaimable? no
+Apr  9 02:28:03 PRDCAPP5 kernel: Node 0 DMA free:11264kB min:4kB low:16kB high:28kB active_anon:0kB inactive_anon:0kB active_file:0kB inactive_file:0kB unevictable:0kB writepending:0kB present:15988kB managed:15360kB mlocked:0kB bounce:0kB free_pcp:0kB local_pcp:0kB free_cma:0kB
+Apr  9 02:28:03 PRDCAPP5 kernel: lowmem_reserve[]: 0 2448 225083 225083 225083
+Apr  9 02:28:03 PRDCAPP5 kernel: Node 0 DMA32 free:891136kB min:732kB low:3236kB high:5740kB active_anon:19236kB inactive_anon:732000kB active_file:1664kB inactive_file:27064kB unevictable:0kB writepending:52kB present:3129152kB managed:2539328kB mlocked:0kB bounce:0kB free_pcp:248kB local_pcp:248kB free_cma:0kB
+Apr  9 02:28:03 PRDCAPP5 kernel: lowmem_reserve[]: 0 0 222634 222634 222634
+Apr  9 02:28:03 PRDCAPP5 kernel: Node 0 Normal free:852712kB min:851036kB low:1079012kB high:1306988kB active_anon:3489364kB inactive_anon:190686684kB active_file:2012964kB inactive_file:1335788kB unevictable:0kB writepending:10500kB present:231735296kB managed:227986080kB mlocked:0kB bounce:0kB free_pcp:1316kB local_pcp:8kB free_cma:0kB
+Apr  9 02:28:03 PRDCAPP5 kernel: lowmem_reserve[]: 0 0 0 0 0
+Apr  9 02:28:03 PRDCAPP5 kernel: Node 0 DMA: 0*4kB 0*8kB 0*16kB 0*32kB 0*64kB 0*128kB 0*256kB 0*512kB 1*1024kB (U) 1*2048kB (M) 2*4096kB (M) = 11264kB
+Apr  9 02:28:03 PRDCAPP5 kernel: Node 0 DMA32: 194*4kB (UME) 3714*8kB (UME) 2508*16kB (UME) 6777*32kB (UME) 3818*64kB (UME) 1171*128kB (UME) 325*256kB (UME) 83*512kB (UME) 23*1024kB (UME) 28*2048kB (ME) 1*4096kB (M) = 892408kB
+Apr  9 02:28:03 PRDCAPP5 kernel: Node 0 Normal: 697*4kB (UMEH) 471*8kB (UEH) 26207*16kB (UMEH) 13090*32kB (UMEH) 9*64kB (MEH) 5*128kB (UMH) 0*256kB 1*512kB (M) 1*1024kB (M) 2*2048kB (M) 0*4096kB = 851596kB
+Apr  9 02:28:03 PRDCAPP5 kernel: Node 0 hugepages_total=0 hugepages_free=0 hugepages_surp=0 hugepages_size=1048576kB
+Apr  9 02:28:03 PRDCAPP5 kernel: Node 0 hugepages_total=0 hugepages_free=0 hugepages_surp=0 hugepages_size=2048kB
+Apr  9 02:28:03 PRDCAPP5 kernel: 1857348 total pagecache pages
+Apr  9 02:28:03 PRDCAPP5 kernel: 592 pages in swap cache
+Apr  9 02:28:03 PRDCAPP5 kernel: Swap cache stats: add 631078, delete 630375, find 150006/185658
+Apr  9 02:28:03 PRDCAPP5 kernel: Free swap  = 66507516kB
+Apr  9 02:28:03 PRDCAPP5 kernel: Total swap = 67108860kB
+Apr  9 02:28:03 PRDCAPP5 kernel: 58720109 pages RAM
+Apr  9 02:28:03 PRDCAPP5 kernel: 0 pages HighMem/MovableOnly
+Apr  9 02:28:03 PRDCAPP5 kernel: 1084917 pages reserved
+Apr  9 02:28:03 PRDCAPP5 kernel: 0 pages hwpoisoned
+Apr  9 02:28:03 PRDCAPP5 kernel: SLUB: Unable to allocate memory on node -1, gfp=0x0()
+Apr  9 02:28:03 PRDCAPP5 kernel:  cache: bmhook_event_entry, object size: 104, buffer size: 128, default order: 0, min order: 0
+Apr  9 02:28:03 PRDCAPP5 kernel:  node 0: slabs: 305, objs: 9760, free: 0
+Apr  9 02:28:03 PRDCAPP5 kernel: babx4464: page allocation failure: order:0, mode:0x10(__GFP_RECLAIMABLE), nodemask=(null),cpuset=/,mems_allowed=0
+Apr  9 02:28:03 PRDCAPP5 kernel: CPU: 22 PID: 1459740 Comm: babx4464 Kdump: loaded Tainted: P           OE     -------- -  - 4.18.0-553.66.1.el8_10.x86_64 #1
+Apr  9 02:28:03 PRDCAPP5 kernel: Hardware name: VMware, Inc. VMware Virtual Platform/440BX Desktop Reference Platform, BIOS 6.00 11/12/2020
+Apr  9 02:28:03 PRDCAPP5 kernel: Call Trace:
+Apr  9 02:28:03 PRDCAPP5 kernel: dump_stack+0x41/0x60
+Apr  9 02:28:03 PRDCAPP5 kernel: warn_alloc.cold.127+0x7b/0x108
+Apr  9 02:28:03 PRDCAPP5 kernel: __alloc_pages_slowpath+0xcb2/0xcd0
+Apr  9 02:28:03 PRDCAPP5 kernel: 0 pages HighMem/MovableOnly
+Apr  9 02:28:03 PRDCAPP5 kernel: 1084917 pages reserved
+Apr  9 02:28:03 PRDCAPP5 kernel: 0 pages hwpoisoned
+Apr  9 02:28:03 PRDCAPP5 kernel: SLUB: Unable to allocate memory on node -1, gfp=0x0()
+Apr  9 02:28:03 PRDCAPP5 kernel:  cache: bmhook_event_entry, object size: 104, buffer size: 128, default order: 0, min order: 0
+Apr  9 02:28:03 PRDCAPP5 kernel:  node 0: slabs: 305, objs: 9760, free: 0
+Apr  9 02:28:03 PRDCAPP5 kernel: babx4464: page allocation failure: order:0, mode:0x10(__GFP_RECLAIMABLE), nodemask=(null),cpuset=/,mems_allowed=0
+Apr  9 02:28:03 PRDCAPP5 kernel: CPU: 22 PID: 1459740 Comm: babx4464 Kdump: loaded Tainted: P           OE     -------- -  - 4.18.0-553.66.1.el8_10.x86_64 #1
+Apr  9 02:28:03 PRDCAPP5 kernel: Hardware name: VMware, Inc. VMware Virtual Platform/440BX Desktop Reference Platform, BIOS 6.00 11/12/2020
+Apr  9 02:28:03 PRDCAPP5 kernel: Call Trace:
+Apr  9 02:28:03 PRDCAPP5 kernel: dump_stack+0x41/0x60
+Apr  9 02:28:03 PRDCAPP5 kernel: warn_alloc.cold.127+0x7b/0x108
+Apr  9 02:28:03 PRDCAPP5 kernel: __alloc_pages_slowpath+0xcb2/0xcd0
+Apr  9 02:28:03 PRDCAPP5 kernel: __alloc_pages_nodemask+0x2e2/0x330
+Apr  9 02:28:03 PRDCAPP5 kernel: new_slab+0x3f4/0x4f0
+Apr  9 02:28:03 PRDCAPP5 kernel: ___slab_alloc+0x3a3/0x950
+Apr  9 02:28:03 PRDCAPP5 kernel: ? bmhook_get_file_object_from_dentry_mnt+0x2f8/0x3b0 [bmhook]
+Apr  9 02:28:03 PRDCAPP5 kernel: ? bmhook_scan_enqueue+0x2c/0x230 [bmhook]
+Apr  9 02:28:03 PRDCAPP5 kernel: ? _cond_resched+0x15/0x30
+Apr  9 02:28:03 PRDCAPP5 kernel: ? mmput+0xf/0x130
+Apr  9 02:28:03 PRDCAPP5 kernel: ? bmhook_get_object+0x608/0xe70 [bmhook]
+Apr  9 02:28:03 PRDCAPP5 kernel: ? bmhook_scan_enqueue+0x2c/0x230 [bmhook]
+Apr  9 02:28:03 PRDCAPP5 kernel: kmem_cache_alloc+0x252/0x280
+Apr  9 02:28:03 PRDCAPP5 kernel: bmhook_scan_enqueue+0x2c/0x230 [bmhook]
+Apr  9 02:28:03 PRDCAPP5 kernel: __bmhook_send_event_common+0x49c/0xc30 [bmhook]
+Apr  9 02:28:03 PRDCAPP5 kernel: ? ktime_get_real_ts64+0x50/0xf0
+Apr  9 02:28:03 PRDCAPP5 kernel: bmhook_send_event_ext+0x93/0xe0 [bmhook]
+Apr  9 02:28:03 PRDCAPP5 kernel: tmbpf_send_event_ext+0xa/0x20 [bmhook]
+Apr  9 02:28:03 PRDCAPP5 kernel: ? bpf_lru_push_free+0xe2/0x130 [bmhook]
+Apr  9 02:28:03 PRDCAPP5 kernel: ? bmhook_prehook_handler+0x243/0x2e0 [bmhook]
+Apr  9 02:28:03 PRDCAPP5 kernel: ? tmhook_invoke_prehooks+0x41/0xb0 [tmhook]
+Apr  9 02:28:03 PRDCAPP5 kernel: ? tmhook_handler+0x18b/0x210 [tmhook]
+Apr  9 02:28:03 PRDCAPP5 kernel: ? do_syscall_64+0x5b/0x1a0
+Apr  9 02:28:03 PRDCAPP5 kernel: ? do_syscall_64+0x5b/0x1a0
+Apr  9 02:28:03 PRDCAPP5 kernel: ? entry_SYSCALL_64_after_hwframe+0x66/0xcb
+Apr  9 02:28:03 PRDCAPP5 kernel: SLUB: Unable to allocate memory on node -1, gfp=0x0()
+Apr  9 02:28:03 PRDCAPP5 kernel:  cache: bmhook_event_entry, object size: 104, buffer size: 128, default order: 0, min order: 0
+Apr  9 02:28:03 PRDCAPP5 kernel:  node 0: slabs: 305, objs: 9760, free: 0
+Apr  9 02:28:03 PRDCAPP5 kernel: babx4464: page allocation failure: order:0, mode:0x10(__GFP_RECLAIMABLE), nodemask=(null),cpuset=/,mems_allowed=0
+Apr  9 02:28:03 PRDCAPP5 kernel: CPU: 22 PID: 1459740 Comm: babx4464 Kdump: loaded Tainted: P           OE     -------- -  - 4.18.0-553.66.1.el8_10.x86_64 #1
+Apr  9 02:28:03 PRDCAPP5 kernel: Hardware name: VMware, Inc. VMware Virtual Platform/440BX Desktop Reference Platform, BIOS 6.00 11/12/2020
+Apr  9 02:28:03 PRDCAPP5 kernel: Call Trace:
+Apr  9 02:28:03 PRDCAPP5 kernel: dump_stack+0x41/0x60
+Apr  9 02:28:03 PRDCAPP5 kernel: warn_alloc.cold.127+0x7b/0x108
+Apr  9 02:28:03 PRDCAPP5 kernel: __alloc_pages_slowpath+0xcb2/0xcd0
+Apr  9 02:28:03 PRDCAPP5 kernel: __alloc_pages_nodemask+0x2e2/0x330
+Apr  9 02:28:03 PRDCAPP5 kernel: new_slab+0x3f4/0x4f0
+Apr  9 02:28:03 PRDCAPP5 kernel: ___slab_alloc+0x3a3/0x950
+Apr  9 02:28:03 PRDCAPP5 kernel: ? bmhook_get_file_object_from_dentry_mnt+0x2f8/0x3b0 [bmhook]
+              
+Apr  9 02:28:04 PRDCAPP5 kernel: warn_alloc_show_mem: 7 callbacks suppressed
+Apr  9 02:28:04 PRDCAPP5 kernel: Mem-Info:
+Apr  9 02:28:04 PRDCAPP5 kernel: active_anon:865099 inactive_anon:48274655 isolated_anon:96#012 active_file:434925 inactive_file:108119 isolated_file:67#012 unevictable:0 dirty:422 writeback:0#012 slab_reclaimable:1974329 slab_unreclaimable:1915535#012 mapped:89132 shmem:1007124 pagetables:3017821 bounce:0#012 free:438789 free_pcp:2021 free_cma:0
+Apr  9 02:28:04 PRDCAPP5 kernel: Node 0 active_anon:3460396kB inactive_anon:193098620kB active_file:1739700kB inactive_file:432476kB unevictable:0kB isolated(anon):384kB isolated(file):268kB mapped:356528kB dirty:1688kB writeback:0kB shmem:4028496kB shmem_thp: 0kB shmem_pmdmapped: 0kB anon_thp: 2430976kB writeback_tmp:0kB kernel_stack:669388kB pagetables:12071284kB all_unreclaimable? no
+Apr  9 02:28:04 PRDCAPP5 kernel: Node 0 DMA free:11264kB min:4kB low:16kB high:28kB active_anon:0kB inactive_anon:0kB active_file:0kB inactive_file:0kB unevictable:0kB writepending:0kB present:15988kB managed:15360kB mlocked:0kB bounce:0kB free_pcp:0kB local_pcp:0kB free_cma:0kB
+Apr  9 02:28:04 PRDCAPP5 kernel: lowmem_reserve[]: 0 2448 225083 225083 225083
+Apr  9 02:28:04 PRDCAPP5 kernel: Node 0 DMA32 free:891112kB min:732kB low:3236kB high:5740kB active_anon:13096kB inactive_anon:750180kB active_file:1704kB inactive_file:13404kB unevictable:0kB writepending:4kB present:3129152kB managed:2539328kB mlocked:0kB bounce:0kB free_pcp:6196kB local_pcp:8kB free_cma:0kB
+Apr  9 02:28:04 PRDCAPP5 kernel: lowmem_reserve[]: 0 0 222634 222634 222634
+Apr  9 02:28:04 PRDCAPP5 kernel: Node 0 Normal free:852780kB min:851036kB low:1079012kB high:1306988kB active_anon:3447300kB inactive_anon:192347060kB active_file:1740472kB inactive_file:419992kB unevictable:0kB writepending:888kB present:231735296kB managed:227986080kB mlocked:0kB bounce:0kB free_pcp:1888kB local_pcp:28kB free_cma:0kB
+Apr  9 02:28:04 PRDCAPP5 kernel: lowmem_reserve[]: 0 0 0 0 0
+Apr  9 02:28:04 PRDCAPP5 kernel: Node 0 DMA: 0*4kB 0*8kB 0*16kB 0*32kB 0*64kB 0*128kB 0*256kB 0*512kB 1*1024kB (U) 1*2048kB (M) 2*4096kB (M) = 11264kB
+Apr  9 02:28:04 PRDCAPP5 kernel: Node 0 DMA32: 4*4kB (E) 3400*8kB (UME) 2447*16kB (UME) 6763*32kB (UME) 3810*64kB (UME) 1179*128kB (UME) 338*256kB (UME) 83*512kB (UME) 23*1024kB (UME) 28*2048kB (ME) 1*4096kB (M) = 891552kB
+Apr  9 02:28:04 PRDCAPP5 kernel: Node 0 Normal: 29*4kB (UMEH) 5*8kB (UEH) 25333*16kB (UEH) 13799*32kB (UEH) 7*64kB (H) 3*128kB (H) 0*256kB 0*512kB 0*1024kB 0*2048kB 0*4096kB = 847884kB
+Apr  9 02:28:04 PRDCAPP5 kernel: Node 0 hugepages_total=0 hugepages_free=0 hugepages_surp=0 hugepages_size=1048576kB
+Apr  9 02:28:04 PRDCAPP5 kernel: Node 0 hugepages_total=0 hugepages_free=0 hugepages_surp=0 hugepages_size=2048kB
+Apr  9 02:28:04 PRDCAPP5 kernel: 1551359 total pagecache pages
+Apr  9 02:28:04 PRDCAPP5 kernel: 1732 pages in swap cache
+Apr  9 02:28:04 PRDCAPP5 kernel: Swap cache stats: add 650057, delete 648440, find 150019/185681
+Apr  9 02:28:04 PRDCAPP5 kernel: Free swap  = 66432508kB
+Apr  9 02:28:04 PRDCAPP5 kernel: Total swap = 67108860kB
+Apr  9 02:28:04 PRDCAPP5 kernel: 58720109 pages RAM
+Apr  9 02:28:04 PRDCAPP5 kernel: 0 pages HighMem/MovableOnly
+Apr  9 02:28:04 PRDCAPP5 kernel: 1084917 pages reserved
+Apr  9 02:28:04 PRDCAPP5 kernel: 0 pages hwpoisoned
+Apr  9 02:28:04 PRDCAPP5 kernel: SLUB: Unable to allocate memory on node -1, gfp=0x0()
+Apr  9 02:28:04 PRDCAPP5 kernel:  cache: bmhook_event_entry, object size: 104, buffer size: 128, default order: 0, min order: 0
+Apr  9 02:28:04 PRDCAPP5 kernel:  node 0: slabs: 336, objs: 10752, free: 0
+Apr  9 02:28:04 PRDCAPP5 kernel: babx4464: page allocation failure: order:0, mode:0x10(__GFP_RECLAIMABLE), nodemask=(null),cpuset=/,mems_allowed=0
+Apr  9 02:28:04 PRDCAPP5 kernel: CPU: 24 PID: 1452719 Comm: babx4464 Kdump: loaded Tainted: P           OE     -------- -  - 4.18.0-553.66.1.el8_10.x86_64 #1
+Apr  9 02:28:04 PRDCAPP5 kernel: Hardware name: VMware, Inc. VMware Virtual Platform/440BX Desktop Reference Platform, BIOS 6.00 11/12/2020
+Apr  9 02:28:04 PRDCAPP5 kernel: Call Trace:
+Apr  9 02:28:05 PRDCAPP5 systemd-logind[1529]: New session 402341 of user idam_Linuxadm.
+Apr  9 02:28:05 PRDCAPP5 systemd[1]: Started Session 402341 of user idam_Linuxadm.
+Apr  9 02:28:09 PRDCAPP5 systemd[1]: Stopping User Manager for UID 1002...
+Apr  9 02:28:09 PRDCAPP5 systemd[1511736]: Stopped target Default.
+Apr  9 02:28:09 PRDCAPP5 systemd[1511736]: Stopped target Basic System.
+Apr  9 02:28:09 PRDCAPP5 systemd[1511736]: Stopped target Timers.
+Apr  9 02:28:09 PRDCAPP5 systemd[1511736]: Stopped Mark boot as successful after the user session has run 2 minutes.
+Apr  9 02:28:09 PRDCAPP5 systemd[1511736]: Stopped target Paths.
+Apr  9 02:28:09 PRDCAPP5 systemd[1511736]: Stopped target Sockets.
+Apr  9 02:28:09 PRDCAPP5 systemd[1511736]: Closed D-Bus User Message Bus Socket.
+Apr  9 02:28:09 PRDCAPP5 systemd[1511736]: Reached target Shutdown.
+Apr  9 02:28:09 PRDCAPP5 systemd[1511736]: Started Exit the Session.
+Apr  9 02:28:09 PRDCAPP5 systemd[1511736]: Reached target Exit the Session.
+Apr  9 02:28:10 PRDCAPP5 systemd[1]: user@1002.service: Succeeded.
+Apr  9 02:28:10 PRDCAPP5 systemd[1]: Stopped User Manager for UID 1002.
+Apr  9 02:28:10 PRDCAPP5 systemd[1]: Stopping User runtime directory /run/user/1002...
+Apr  9 02:28:10 PRDCAPP5 systemd-logind[1529]: New session 402343 of user idam_Linuxadm.
+Apr  9 02:28:13 PRDCAPP5 systemd[1]: Started Session 402343 of user idam_Linuxadm.
+Apr  9 02:28:13 PRDCAPP5 systemd[1]: Started Process Core Dump (PID 1527319/UID 0).
+Apr  9 02:28:13 PRDCAPP5 systemd[1]: session-402338.scope: Succeeded.
+Apr  9 02:28:29 PRDCAPP5 systemd-logind[1529]: Session 402340 logged out. Waiting for processes to exit.
+Apr  9 02:28:29 PRDCAPP5 systemd[1]: session-402340.scope: Succeeded.
+Apr  9 02:28:29 PRDCAPP5 systemd-logind[1529]: Removed session 402340.
+Apr  9 02:29:19 PRDCAPP5 systemd[1]: run-user-1002.mount: Succeeded.
+Apr  9 02:29:26 PRDCAPP5 systemd-logind[1529]: Session 402343 logged out. Waiting for processes to exit.
+Apr  9 02:29:26 PRDCAPP5 systemd[1]: session-402343.scope: Succeeded.
+Apr  9 02:29:26 PRDCAPP5 systemd-logind[1529]: Removed session 402343.
+Apr  9 02:29:26 PRDCAPP5 systemd-logind[1529]: New session 402344 of user idam_Linuxadm.
+Apr  9 02:29:26 PRDCAPP5 systemd[1]: Started Session 402344 of user idam_Linuxadm.
+Apr  9 02:29:27 PRDCAPP5 systemd-logind[1529]: Session 402344 logged out. Waiting for processes to exit.
+Apr  9 02:29:27 PRDCAPP5 systemd[1]: session-402344.scope: Succeeded.
+Apr  9 02:29:27 PRDCAPP5 systemd-logind[1529]: Removed session 402344.
+Apr  9 02:29:32 PRDCAPP5 systemd-logind[1529]: Session 402311 logged out. Waiting for processes to exit.
+Apr  9 02:30:01 PRDCAPP5 systemd-logind[1529]: Failed to start session scope session-402345.scope: Connection timed out
+Apr  9 02:30:30 PRDCAPP5 systemd[1521184]: Starting Mark boot as successful...
+Apr  9 02:30:30 PRDCAPP5 systemd[1521184]: Started Mark boot as successful.
+Apr  9 02:30:30 PRDCAPP5 systemd[1]: user-runtime-dir@1002.service: Succeeded.
+Apr  9 02:30:01 PRDCAPP5 systemd-logind[1529]: Failed to start session scope session-402345.scope: Connection timed out
+Apr  9 02:30:30 PRDCAPP5 systemd[1521184]: Starting Mark boot as successful...
+Apr  9 02:30:30 PRDCAPP5 systemd[1521184]: Started Mark boot as successful.
+Apr  9 02:30:30 PRDCAPP5 systemd[1]: user-runtime-dir@1002.service: Succeeded.
+Apr  9 02:30:30 PRDCAPP5 systemd[1]: Stopped User runtime directory /run/user/1002.
+Apr  9 02:30:30 PRDCAPP5 rsyslogd[1589]: cannot connect to 10.71.88.76:521: Connection refused [v8.2102.0-15.el8_10.1 try https://www.rsyslog.com/e/2027 ]
+Apr  9 02:30:38 PRDCAPP5 systemd[1]: Started Session 402346 of user finadm.
+Apr  9 02:30:38 PRDCAPP5 systemd[1]: Started Session 402345 of user root.
+Apr  9 02:31:25 PRDCAPP5 systemd[1]: Starting system activity accounting tool...
+Apr  9 02:31:35 PRDCAPP5 systemd-logind[1529]: Failed to abandon session scope, ignoring: Connection timed out
+Apr  9 02:31:37 PRDCAPP5 systemd-logind[1529]: Session 402299 logged out. Waiting for processes to exit.
+Apr  9 02:31:43 PRDCAPP5 systemd[1]: Removed slice User Slice of UID 1002.
+Apr  9 02:32:30 PRDCAPP5 systemd[1]: session-402346.scope: Succeeded.
+Apr  9 02:32:31 PRDCAPP5 systemd[1]: session-402345.scope: Succeeded.
+Apr  9 02:32:31 PRDCAPP5 systemd[1]: Started Session 402347 of user root.
+Apr  9 02:32:31 PRDCAPP5 rsyslogd[1589]: cannot connect to 10.71.88.76:521: Connection refused [v8.2102.0-15.el8_10.1 try https://www.rsyslog.com/e/2027 ]
+Apr  9 02:33:46 PRDCAPP5 systemd-journald[1100]: Missed 45659 kernel messages
+Apr  9 02:33:46 PRDCAPP5 kernel: [1515751]  2011 1515751   194353     5801  1232896        0             0 babx4464
+Apr  9 02:33:53 PRDCAPP5 kernel: [1515752]  2011 1515752   194353     5319  1265664        0             0 babx4464
+Apr  9 02:33:53 PRDCAPP5 kernel: [1515757]  2011 1515757   194353     5793  1253376        0             0 babx4464
+Apr  9 02:33:53 PRDCAPP5 kernel: [1515775]  2011 1515775     5822      795    86016        0             0 sh
+Apr  9 02:33:53 PRDCAPP5 kernel: [1515778]  2011 1515778     5822      800    90112        0             0 sh
+Apr  9 02:33:53 PRDCAPP5 kernel: [1515779]  2011 1515779     5822      794    90112        0             0 sh
+Apr  9 02:33:53 PRDCAPP5 kernel: [1515780]  2011 1515780     5822      800    90112        0             0 sh
+Apr  9 02:33:53 PRDCAPP5 kernel: [1515790]  2011 1515790     5822      800    94208        0             0 sh
+Apr  9 02:33:53 PRDCAPP5 kernel: [1515792]  2011 1515792   194353     5753  1273856        0             0 babx4464
+Apr  9 02:33:53 PRDCAPP5 kernel: [1515795]  2011 1515795   194352     5776  1245184        0             0 babx4464
+Apr  9 02:33:53 PRDCAPP5 kernel: [1515797]  2011 1515797   194352     5755  1253376        0             0 babx4464
+Apr  9 02:33:53 PRDCAPP5 kernel: [1515802]  2011 1515802   194352     5755  1241088        0             0 babx4464
+Apr  9 02:33:53 PRDCAPP5 kernel: [1515805]  2011 1515805   194353     5766  1245184        0             0 babx4464
+Apr  9 02:33:53 PRDCAPP5 kernel: [1515823]  2011 1515823     5822      775    86016        0             0 sh
+Apr  9 02:33:53 PRDCAPP5 kernel: [1515829]  2011 1515829   194352     5816  1253376        0             0 babx4464
+Apr  9 02:33:53 PRDCAPP5 kernel: [1515834]  2011 1515834     5822      801    90112        0             0 sh
+Apr  9 02:33:53 PRDCAPP5 kernel: [1515835]  2011 1515835     5822      798    94208        0             0 sh
+Apr  9 02:33:53 PRDCAPP5 kernel: [1515838]  2011 1515838   194352     5774  1265664        0             0 babx4464
+Apr  9 02:33:53 PRDCAPP5 kernel: [1515839]  2011 1515839   194353     5769  1236992        0             0 babx4464
+Apr  9 02:33:53 PRDCAPP5 kernel: [1515843]  2011 1515843     5822      802    86016        0             0 sh
+Apr  9 02:33:53 PRDCAPP5 kernel: [1515849]  2011 1515849     5822      801    98304        0             0 sh
+Apr  9 02:33:53 PRDCAPP5 kernel: [1515858]  2011 1515858   194353     5816  1253376        0             0 babx4464
+Apr  9 02:33:53 PRDCAPP5 kernel: [1515872]  2011 1515872   194352     5773  1257472        0             0 babx4464
+Apr  9 02:33:53 PRDCAPP5 kernel: [1515876]  2011 1515876     5822      799    94208        0             0 sh
+Apr  9 02:33:53 PRDCAPP5 kernel: [1515880]  2011 1515880     5822      798    81920        0             0 sh
+Apr  9 02:33:53 PRDCAPP5 kernel: [1515889]  2011 1515889   194260     5491  1241088        0             0 mrbx4004
+Apr  9 02:33:53 PRDCAPP5 kernel: [1515892]  2011 1515892   194352     5771  1257472        0             0 babx4464
+Apr  9 02:33:54 PRDCAPP5 kernel: [1515896]  2011 1515896     5822      798    94208        0             0 sh
+Apr  9 02:33:46 PRDCAPP5 kernel: [1515751]  2011 1515751   194353     5801  1232896        0             0 babx4464
+Apr  9 02:33:53 PRDCAPP5 kernel: [1515752]  2011 1515752   194353     5319  1265664        0             0 babx4464
+Apr  9 02:33:53 PRDCAPP5 kernel: [1515757]  2011 1515757   194353     5793  1253376        0             0 babx4464
+Apr  9 02:33:53 PRDCAPP5 kernel: [1515775]  2011 1515775     5822      795    86016        0             0 sh
+Apr  9 02:33:53 PRDCAPP5 kernel: [1515778]  2011 1515778     5822      800    90112        0             0 sh
+Apr  9 02:33:53 PRDCAPP5 kernel: [1515779]  2011 1515779     5822      794    90112        0             0 sh
+Apr  9 02:33:53 PRDCAPP5 kernel: [1515780]  2011 1515780     5822      800    90112        0             0 sh
+Apr  9 02:33:53 PRDCAPP5 kernel: [1515790]  2011 1515790     5822      800    94208        0             0 sh
+Apr  9 02:33:53 PRDCAPP5 kernel: [1515792]  2011 1515792   194353     5753  1273856        0             0 babx4464
+Apr  9 02:33:53 PRDCAPP5 kernel: [1515795]  2011 1515795   194352     5776  1245184        0             0 babx4464
+Apr  9 02:33:53 PRDCAPP5 kernel: [1515797]  2011 1515797   194352     5755  1253376        0             0 babx4464
+Apr  9 02:33:53 PRDCAPP5 kernel: [1515802]  2011 1515802   194352     5755  1241088        0             0 babx4464
+Apr  9 02:33:53 PRDCAPP5 kernel: [1515805]  2011 1515805   194353     5766  1245184        0             0 babx4464
+Apr  9 02:33:53 PRDCAPP5 kernel: [1515823]  2011 1515823     5822      775    86016        0             0 sh
+Apr  9 02:33:53 PRDCAPP5 kernel: [1515829]  2011 1515829   194352     5816  1253376        0             0 babx4464
+Apr  9 02:33:53 PRDCAPP5 kernel: [1515834]  2011 1515834     5822      801    90112        0             0 sh
+Apr  9 02:33:53 PRDCAPP5 kernel: [1515835]  2011 1515835     5822      798    94208        0             0 sh
+Apr  9 02:33:53 PRDCAPP5 kernel: [1515838]  2011 1515838   194352     5774  1265664        0             0 babx4464
+Apr  9 02:33:53 PRDCAPP5 kernel: [1515839]  2011 1515839   194353     5769  1236992        0             0 babx4464
+Apr  9 02:33:53 PRDCAPP5 kernel: [1515843]  2011 1515843     5822      802    86016        0             0 sh
+Apr  9 02:33:53 PRDCAPP5 kernel: [1515849]  2011 1515849     5822      801    98304        0             0 sh
+Apr  9 02:33:53 PRDCAPP5 kernel: [1515858]  2011 1515858   194353     5816  1253376        0             0 babx4464
+Apr  9 02:33:53 PRDCAPP5 kernel: [1515872]  2011 1515872   194352     5773  1257472        0             0 babx4464
+Apr  9 02:33:53 PRDCAPP5 kernel: [1515876]  2011 1515876     5822      799    94208        0             0 sh
+Apr  9 02:33:53 PRDCAPP5 kernel: [1515880]  2011 1515880     5822      798    81920        0             0 sh
+Apr  9 02:33:53 PRDCAPP5 kernel: [1515889]  2011 1515889   194260     5491  1241088        0             0 mrbx4004
+Apr  9 02:33:53 PRDCAPP5 kernel: [1515892]  2011 1515892   194352     5771  1257472        0             0 babx4464
+Apr  9 02:33:54 PRDCAPP5 kernel: [1515896]  2011 1515896     5822      798    94208        0             0 sh
+Apr  9 02:33:54 PRDCAPP5 kernel: [1515904]  2011 1515904     5822      800    86016        0             0 sh
+Apr  9 02:33:54 PRDCAPP5 kernel: [1515907]  2011 1515907   194352     5804  1232896        0             0 babx4464
+Apr  9 02:33:54 PRDCAPP5 kernel: [1515914]  2011 1515914   194352     5788  1236992        0             0 babx4464
+Apr  9 02:33:54 PRDCAPP5 kernel: [1515915]  2011 1515915     5822      801    94208        0             0 sh
+Apr  9 02:33:54 PRDCAPP5 kernel: [1515916]  2011 1515916     5822      802    90112        0             0 sh
+Apr  9 02:33:54 PRDCAPP5 kernel: [1515918]  2011 1515918   194353     5778  1282048        0             0 babx4464
+Apr  9 02:33:54 PRDCAPP5 kernel: [1515927]  2011 1515927     5822      787    86016        0             0 sh
+Apr  9 02:33:54 PRDCAPP5 kernel: [1515931]  2011 1515931   194352     5830  1245184        0             0 babx4464
+Apr  9 02:33:54 PRDCAPP5 kernel: [1515940]  2011 1515940     5822      797    90112        0             0 sh
+Apr  9 02:33:54 PRDCAPP5 kernel: [1515942]  2011 1515942   194352     5804  1249280        0             0 babx4464
+Apr  9 02:33:54 PRDCAPP5 kernel: [1515945]  2011 1515945   194353     5773  1249280        0             0 babx4464
+Apr  9 02:33:54 PRDCAPP5 kernel: [1515947]  2011 1515947     5822      795    86016        0             0 sh
+Apr  9 02:33:54 PRDCAPP5 kernel: [1515950]  2011 1515950   194352     5772  1232896        0             0 babx4464
+Apr  9 02:33:54 PRDCAPP5 kernel: [1515954]  2011 1515954     5822      801    94208        0             0 sh
+Apr  9 02:33:54 PRDCAPP5 kernel: [1515959]  2011 1515959     5822      801    81920        0             0 sh
+Apr  9 02:33:54 PRDCAPP5 kernel: [1515964]  2011 1515964   194352     5774  1261568        0             0 babx4464
+Apr  9 02:33:54 PRDCAPP5 kernel: [1515977]  2011 1515977     5822      798    90112        0             0 sh
+Apr  9 02:33:54 PRDCAPP5 kernel: [1516093]  2011 1516093     5822      801    94208        0             0 sh
+Apr  9 02:34:01 PRDCAPP5 kernel: [1516094]  2011 1516094     5822      785    81920        0             0 sh
+Apr  9 02:34:01 PRDCAPP5 kernel: [1516101]  2011 1516101   194353     5850  1236992        0             0 babx4464
+Apr  9 02:34:01 PRDCAPP5 kernel: [1516102]  2011 1516102   194352     5813  1269760        0             0 babx4464
+Apr  9 02:34:01 PRDCAPP5 kernel: [1516112]  2011 1516112     5822      800    90112        0             0 sh
+Apr  9 02:34:01 PRDCAPP5 kernel: [1516121]  2011 1516121     5822      789    98304        0             0 sh
+Apr  9 02:34:01 PRDCAPP5 kernel: [1516122]  2011 1516122   194352     5799  1253376        0             0 babx4464
+Apr  9 02:34:01 PRDCAPP5 kernel: [1516129]  2011 1516129   194353     5829  1261568        0             0 babx4464
+Apr  9 02:34:01 PRDCAPP5 kernel: [1516131]  2011 1516131     5822      794    94208        0             0 sh
+Apr  9 02:34:02 PRDCAPP5 kernel: [1516134]  2011 1516134   194353     5810  1224704        0             0 babx4464
+Apr  9 02:34:02 PRDCAPP5 kernel: [1516141]  2011 1516141     5822      799    81920        0             0 sh
+Apr  9 02:34:02 PRDCAPP5 kernel: [1516142]  2011 1516142     5822      803    86016        0             0 sh
+Apr  9 02:34:02 PRDCAPP5 kernel: [1516145]  2011 1516145   194352     5806  1265664        0             0 babx4464
+Apr  9 02:34:02 PRDCAPP5 kernel: [1516146]  2011 1516146   194352     5816  1261568        0             0 babx4464
+Apr  9 02:34:02 PRDCAPP5 kernel: [1516153]  2011 1516153     5822      802    86016        0             0 sh
+Apr  9 02:34:02 PRDCAPP5 kernel: [1516155]  2011 1516155     5822      798    81920        0             0 sh
+Apr  9 02:34:02 PRDCAPP5 kernel: [1516157]  2011 1516157   194352     5829  1241088        0             0 babx4464
+Apr  9 02:34:02 PRDCAPP5 kernel: [1516159]  2011 1516159   194353     5801  1241088        0             0 babx4464
+Apr  9 02:34:08 PRDCAPP5 kernel: [1516165]  2011 1516165     5822      798    90112        0             0 sh
+Apr  9 02:34:12 PRDCAPP5 systemd-journald[1100]: Missed 28581 kernel messages
+Apr  9 02:34:12 PRDCAPP5 kernel: [1517358]  2011 1517358     5822      778    86016        0             0 sh
+Apr  9 02:34:12 PRDCAPP5 kernel: [1517359]  2011 1517359     5822      765    86016        0             0 sh
+Apr  9 02:34:12 PRDCAPP5 kernel: [1517372]  2011 1517372     5822      753    90112        0             0 sh
+Apr  9 02:34:12 PRDCAPP5 kernel: [1517373]  2011 1517373   194352     5668  1257472        0             0 babx4464
+Apr  9 02:34:12 PRDCAPP5 kernel: [1517374]  2011 1517374     5822      776    94208        0             0 sh
+Apr  9 02:34:12 PRDCAPP5 kernel: [1517378]  2011 1517378   194353     5622  1249280        0             0 babx4464
+Apr  9 02:34:12 PRDCAPP5 kernel: [1517380]  2011 1517380   194352     5604  1249280        0             0 babx4464
+Apr  9 02:34:12 PRDCAPP5 kernel: [1517386]  2011 1517386     5822      776    94208        0             0 sh
+Apr  9 02:34:12 PRDCAPP5 kernel: [1517387]  2011 1517387   194260     5437  1228800        0             0 mrbx4004
+Apr  9 02:34:12 PRDCAPP5 kernel: [1517393]  2011 1517393   194261     5417  1220608        0             0 mrbx4004
+Apr  9 02:34:12 PRDCAPP5 kernel: [1517394]  2011 1517394   194260     5407  1216512        0             0 mrbx4004
+Apr  9 02:34:12 PRDCAPP5 kernel: [1517395]  2011 1517395   194352     5628  1253376        0             0 babx4464
+Apr  9 02:34:12 PRDCAPP5 kernel: [1517396]  2011 1517396   194261     5444  1241088        0             0 mrbx4004
+Apr  9 02:34:12 PRDCAPP5 kernel: [1517399]  2011 1517399   194352     5570  1257472        0             0 babx4464
+Apr  9 02:34:12 PRDCAPP5 kernel: [1517402]  2011 1517402   194352     5638  1253376        0             0 babx4464
+Apr  9 02:34:12 PRDCAPP5 kernel: [1517403]  2011 1517403     5822      778    90112        0             0 sh
+Apr  9 02:34:12 PRDCAPP5 kernel: [1517424]  2011 1517424     5822      773    81920        0             0 sh
+Apr  9 02:34:12 PRDCAPP5 kernel: [1517427]  2011 1517427     5822      775    90112        0             0 sh
+Apr  9 02:34:12 PRDCAPP5 kernel: [1517429]  2011 1517429     5822      753    86016        0             0 sh
+Apr  9 02:34:12 PRDCAPP5 kernel: [1517430]  2011 1517430     5822      776    81920        0             0 sh
+Apr  9 02:34:12 PRDCAPP5 kernel: [1517431]  2011 1517431     5822      777    90112        0             0 sh
+Apr  9 02:34:12 PRDCAPP5 kernel: [1517432]  2011 1517432     5822      765    86016        0             0 sh
+Apr  9 02:34:12 PRDCAPP5 kernel: [1517433]  2011 1517433     5822      766    90112        0             0 sh
+Apr  9 02:34:12 PRDCAPP5 kernel: [1517434]  2011 1517434     5822      777    86016        0             0 sh
+Apr  9 02:34:12 PRDCAPP5 kernel: [1517437]  2011 1517437     5822      769    90112        0             0 sh
+Apr  9 02:34:12 PRDCAPP5 kernel: [1517440]  2011 1517440     5822      776    86016        0             0 sh
+Apr  9 02:34:12 PRDCAPP5 kernel: [1517442]  2011 1517442   194352     5596  1236992        0             0 babx4464
+Apr  9 02:34:12 PRDCAPP5 kernel: [1517443]  2011 1517443     5822      777    94208        0             0 sh
+Apr  9 02:34:12 PRDCAPP5 kernel: [1517444]  2011 1517444     5822      752    94208        0             0 sh
+Apr  9 02:34:12 PRDCAPP5 kernel: [1517528]  2011 1517528   194353     5645  1245184        0             0 babx4464
+Apr  9 02:34:12 PRDCAPP5 kernel: [1517530]  2011 1517530   194261     5409  1232896        1             0 mrbx4004
+Apr  9 02:34:12 PRDCAPP5 kernel: [1517549]  2011 1517549   194260     5430  1208320        0             0 mrbx4004
+Apr  9 02:34:12 PRDCAPP5 kernel: [1517551]  2011 1517551   194260     5461  1204224        0             0 mrbx4004
+Apr  9 02:34:12 PRDCAPP5 kernel: [1517567]  2011 1517567   194260     5415  1208320        0             0 mrbx4004
+Apr  9 02:34:12 PRDCAPP5 kernel: [1517579]  2011 1517579   194261     5456  1224704        0             0 mrbx4004
+Apr  9 02:34:12 PRDCAPP5 kernel: [1517580]  2011 1517580   194261     5409  1232896        0             0 mrbx4004
+Apr  9 02:34:12 PRDCAPP5 kernel: [1517581]  2011 1517581   194351     5577  1269760        0             0 babx4464
+Apr  9 02:34:12 PRDCAPP5 kernel: [1517582]  2011 1517582   194261     5457  1224704        0             0 mrbx4004
+Apr  9 02:34:12 PRDCAPP5 kernel: [1517583]  2011 1517583   194260     5419  1236992        0             0 mrbx4004
+Apr  9 02:34:12 PRDCAPP5 kernel: [1517585]  2011 1517585   194260     5408  1220608        0             0 mrbx4004
+Apr  9 02:34:12 PRDCAPP5 kernel: [1517586]  2011 1517586   194260     5462  1245184        0             0 mrbx4004
+Apr  9 02:34:12 PRDCAPP5 kernel: [1517587]  2011 1517587   194260     5440  1224704        0             0 mrbx4004
+Apr  9 02:34:12 PRDCAPP5 kernel: [1517588]  2011 1517588   194352     5577  1253376        0             0 babx4464
+Apr  9 02:34:12 PRDCAPP5 kernel: [1517589]  2011 1517589   194261     5442  1216512        0             0 mrbx4004
+Apr  9 02:34:12 PRDCAPP5 kernel: [1517592]  2011 1517592   194260     5417  1241088        0             0 mrbx4004
+Apr  9 02:34:12 PRDCAPP5 kernel: [1517593]  2011 1517593   194260     5428  1216512        0             0 mrbx4004
+Apr  9 02:34:12 PRDCAPP5 kernel: [1517594]  2011 1517594   194260     5448  1224704        0             0 mrbx4004
+Apr  9 02:34:12 PRDCAPP5 kernel: [1517595]  2011 1517595     5822      772    86016        0             0 sh
+Apr  9 02:34:12 PRDCAPP5 kernel: [1517599]  2011 1517599     5822      770    90112        0             0 sh
+Apr  9 02:34:12 PRDCAPP5 kernel: [1517608]  2011 1517608     5822      762    90112        0             0 sh
+Apr  9 02:34:12 PRDCAPP5 kernel: [1517610]  2011 1517610     5822      778    98304        0             0 sh
+Apr  9 02:34:12 PRDCAPP5 kernel: [1517630]  2011 1517630   194353     5649  1265664        0             0 babx4464
+Apr  9 02:34:12 PRDCAPP5 kernel: [1517631]  2011 1517631     5822      779    90112        0             0 sh
+Apr  9 02:34:12 PRDCAPP5 kernel: [1517632]  2011 1517632     5822      777    86016        0             0 sh
+Apr  9 02:34:12 PRDCAPP5 kernel: [1517633]  2011 1517633   194353     5669  1257472        0             0 babx4464
+Apr  9 02:34:12 PRDCAPP5 kernel: [1517636]  2011 1517636   194353     5684  1265664        0             0 babx4464
+Apr  9 02:34:12 PRDCAPP5 kernel: [1517647]  2011 1517647     5822      776    90112        0             0 sh
+Apr  9 02:34:12 PRDCAPP5 kernel: [1517649]  2011 1517649     5822      753    90112        0             0 sh
+Apr  9 02:34:12 PRDCAPP5 kernel: [1517657]  2011 1517657     5822      777    90112        0             0 sh
+Apr  9 02:34:12 PRDCAPP5 kernel: [1517658]  2011 1517658     5822      778    86016        0             0 sh
+Apr  9 02:34:12 PRDCAPP5 kernel: [1517671]  2011 1517671   194353     5634  1241088        0             0 babx4464
+Apr  9 02:34:12 PRDCAPP5 kernel: [1517691]  2011 1517691   194353     5610  1249280        0             0 babx4464
+Apr  9 02:34:12 PRDCAPP5 kernel: [1517692]  2011 1517692   194261     5448  1232896        0             0 mrbx4004
+Apr  9 02:34:12 PRDCAPP5 kernel: [1517695]  2011 1517695     5822      773    90112        0             0 sh
+Apr  9 02:34:12 PRDCAPP5 kernel: [1517696]  2011 1517696     5822      776    86016        0             0 sh
+Apr  9 02:34:12 PRDCAPP5 kernel: [1517697]  2011 1517697   194352     5648  1245184        0             0 babx4464
+Apr  9 02:34:12 PRDCAPP5 kernel: [1517698]  2011 1517698   194353     5633  1253376        0             0 babx4464
+Apr  9 02:34:12 PRDCAPP5 kernel: [1517731]  2011 1517731     5822      776    90112        0             0 sh
+Apr  9 02:34:12 PRDCAPP5 kernel: [1517735]  2011 1517735     5822      773    86016        0             0 sh
+Apr  9 02:34:12 PRDCAPP5 kernel: [1517736]  2011 1517736   194351     5646  1232896        0             0 babx4464
+Apr  9 02:34:12 PRDCAPP5 kernel: [1517741]  2011 1517741   194352     5624  1249280        0             0 babx4464
+Apr  9 02:34:12 PRDCAPP5 kernel: [1517743]  2011 1517743   194352     5638  1241088        0             0 babx4464
+Apr  9 02:34:12 PRDCAPP5 kernel: [1517745]  2011 1517745   194352     5667  1232896        0             0 babx4464
+Apr  9 02:34:12 PRDCAPP5 kernel: [1517747]  2011 1517747   194353     5629  1257472        0             0 babx4464
+Apr  9 02:34:12 PRDCAPP5 kernel: [1517759]  2011 1517759   194352     5574  1249280        0             0 babx4464
+Apr  9 02:34:12 PRDCAPP5 kernel: [1517765]  2011 1517765     5822      774    94208        0             0 sh
+Apr  9 02:34:12 PRDCAPP5 kernel: [1517766]  2011 1517766     5822      753    90112        0             0 sh
+Apr  9 02:34:12 PRDCAPP5 kernel: [1517768]  2011 1517768     5822      768    90112        0             0 sh
+                          
