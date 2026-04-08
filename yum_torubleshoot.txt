@@ -85,7 +85,12 @@ Traceback (most recent call last):
 ImportError: No module named yummain
 [root@squid ~]#
 
-
+rpm -ivh --replacepkgs \
+yum-*.rpm \
+yum-cli-*.rpm \
+yum-metadata-parser-*.rpm \
+python-urlgrabber-*.rpm \
+python-iniparse-*.rpm
 
 
 
