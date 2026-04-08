@@ -1,0 +1,23 @@
+[root@squid ~]# python --version
+Python 2.7.5
+[root@squid ~]# python --version
+Python 2.7.5
+[root@squid ~]# head -1 /usr/bin/yum
+#!/usr/bin/python
+[root@squid ~]# python
+python     python2    python2.7
+[root@squid ~]# python^C
+[root@squid ~]# ls /usr/lib/python*/site-packages/yum
+callbacks.py   depsolve.py   fssnapshots.py   __init__.py        misc.py          pgpmsg.py         repos.py        sqlutils.py          yumRepo.py
+callbacks.pyc  depsolve.pyc  fssnapshots.pyc  __init__.pyc       misc.pyc         pgpmsg.pyc        repos.pyc       sqlutils.pyc         yumRepo.pyc
+comps.py       drpm.py       history.py       logginglevels.py   packageSack.py   pkgtag_db.py      rpmsack.py      transactioninfo.py
+comps.pyc      drpm.pyc      history.pyc      logginglevels.pyc  packageSack.pyc  pkgtag_db.pyc     rpmsack.pyc     transactioninfo.pyc
+config.py      Errors.py     i18n.py          mdparser.py        packages.py      plugins.py        rpmtrans.py     updateinfo.py
+config.pyc     Errors.pyc    i18n.pyc         mdparser.pyc       packages.pyc     plugins.pyc       rpmtrans.pyc    updateinfo.pyc
+constants.py   failover.py   igroups.py       metalink.py        parser.py        repoMDObject.py   sqlitesack.py   update_md.py
+constants.pyc  failover.pyc  igroups.pyc      metalink.pyc       parser.pyc       repoMDObject.pyc  sqlitesack.pyc  update_md.pyc
+[root@squid ~]# locate yummain
+/usr/share/bash-completion/completions/yummain.py
+/usr/share/yum-cli/yummain.py
+/usr/share/yum-cli/yummain.pyc
+[root@squid ~]#
