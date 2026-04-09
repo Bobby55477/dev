@@ -1,0 +1,384 @@
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++Harbor registry setup
+192.168.168.177 ----> Minio database ----> miniodc.database.com
+192.168.168.176 ----> Minio database ----> miniodr.database.com
+192.168.168.160 ----> DC ----> harbordc.company.com
+192.168.168.178 ----> DR ----> harbordr.company.com
+
+hostnamectl set-hostname miniodc.database.com
+hostnamectl set-hostname miniodr.database.com
+hostnamectl set-hostname harbordc.company.com
+hostnamectl set-hostname harbordr.company.com
+
+192.168.168.177  miniodc.database.com
+192.168.168.176  miniodr.database.com
+192.168.168.160  harbordc.company.com
+192.168.168.178  harbordr.company.com
+
+
+++++++++++++++++++++++++++++++++++++++++++++Minio DC DB setup 192.168.168.177
+
+Database server setup
+
+Step1: Install Docker
+sudo dnf config-manager --add-repo https://download.docker.com/linux/centos/docker-ce.repo
+sudo dnf install -y docker-ce docker-ce-cli containerd.io docker-compose-plugin
+
+Step2 Start and Enable Docker
+sudo systemctl enable --now docker
+
+Step3: Install Docker Compose (Legacy standalone if needed, or use 'docker compose')
+sudo dnf install -y curl
+
+
+Step4: Set the MinIO storage_service
+docker run -d --name minio \
+  -p 9000:9000 -p 9001:9001 \
+  -e "MINIO_ROOT_USER=admin" \
+  -e "MINIO_ROOT_PASSWORD=password123" \
+  -v /mnt/minio_data:/data \
+  minio/minio server /data --console-address ":9001"
+  
+Step5: If in case the firewall is enabled use the below command to add the port 9001 to allow.
+firewall-cmd --permanent --add-port=9001/tcp
+firewall-cmd --reload
+
+Step6: Allow the  9001 port from the selinux
+semanage port -a -t http_port_t -p tcp 9001
+
+Step7: Access the UI of the MinIO storage from the browser:
+ http://192.168.168.177:9001
+
+- Create the bucket from UI as:
+	 name: harbor-dc
+
+++++++++++++++++++++++++++++++++++++++++++++Minio DR DB setup 192.168.168.176
+
+Database server setup
+
+Step1: Install Docker
+sudo dnf config-manager --add-repo https://download.docker.com/linux/centos/docker-ce.repo
+sudo dnf install -y docker-ce docker-ce-cli containerd.io docker-compose-plugin
+
+Step2 Start and Enable Docker
+sudo systemctl enable --now docker
+
+Step3: Install Docker Compose (Legacy standalone if needed, or use 'docker compose')
+sudo dnf install -y curl
+
+
+Step4: Set the MinIO storage_service
+docker run -d --name minio \
+  -p 9000:9000 -p 9001:9001 \
+  -e "MINIO_ROOT_USER=admin" \
+  -e "MINIO_ROOT_PASSWORD=password123" \
+  -v /mnt/minio_data:/data \
+  minio/minio server /data --console-address ":9001"
+  
+Step5: If in case the firewall is enabled use the below command to add the port 9001 to allow.
+firewall-cmd --permanent --add-port=9001/tcp
+firewall-cmd --reload
+
+Step6: Allow the  9001 port from the selinux
+semanage port -a -t http_port_t -p tcp 9001
+
+Step7: Access the UI of the MinIO storage from the browser:
+ http://192.168.168.176:9001
+ 
+- Create the bucket from UI as:
+	 name: harbor-dr
+
++++++++++++++++++++++++++++++++++++++++++++++Harbor DC setup 192.168.168.160
+
+Step1: Install Docker
+sudo dnf config-manager --add-repo https://download.docker.com/linux/centos/docker-ce.repo
+sudo dnf install -y docker-ce docker-ce-cli containerd.io docker-compose-plugin
+
+Step2: Start and Enable Docker
+sudo systemctl enable --now docker
+
+Step3: Add the below lines in the config to allow the http connection through docker. For HTTP connection docker doesn't trust the urls of the Dokcer so allow them as below.
+vim /etc/docker/daemon.json
+{
+  "insecure-registries" : ["192.168.168.160", "192.168.168.178", "harbordc.company.com", "harbordr.company.com"]
+}
+
+- restart the docker
+systemctl restart docker
+
+Step4: Install Docker Compose (Legacy standalone if needed, or use 'docker compose')
+sudo dnf install -y curl
+
+
+Step5: Download the installer:
+- wget https://github.com/goharbor/harbor/releases/download/v2.10.0/harbor-offline-installer-v2.10.0.tgz
+- tar -xvzf harbor-offline-installer-v2.10.0.tgz
+- cd harbor
+- cp harbor.yml.tmpl harbor.yml
+
+Step6: Setup the Harbor storage
+- vim harbor.yml
+
+- Add below lines:
+
+hostname: harbordc.company.com
+
+external_url: https://harbordc.company.com
+
+--------Storage referring to the minio-dc server
+
+storage_service:
+  s3:
+	accesskey: admin
+	secretkey: password123
+	region: us-east-1
+	regionendpoint: http://192.168.168.177:9000
+	bucket: harbor-dc
+	secure: false # Set to true if using HTTPS for MinIO
+	v4auth: true
+
+
+
+
+
+Comment below :------------------
+https:
+  # https port for harbor, default is 443
+  port: 443
+  # The path of cert and key files for nginx
+  certificate: /data/harbor.crt
+  private_key: /data/harbor.key
+--------------------------------------
+
+Step7:Initialize and Install Harbor
+# Navigate back to your harbor installation folder
+cd /opt/harbor  # or wherever you extracted it
+
+# Run the prepare script to generate config files for each component
+sudo ./prepare
+
+
+Step8: After running the prepare command you will get the file docker-compose.yml . Now add the dr server ip in dc harbor file under the section core and jobservice as referring below
+
+vim docker-compose.yml
+
+core:
+    image: goharbor/harbor-core:v2.10.0
+    container_name: harbor-core
+    extra_hosts:
+	- "miniodc.database.com:192.168.168.176"
+    - "harbordr.company.com:192.168.168.178"
+
+
+ jobservice:
+    image: goharbor/harbor-jobservice:v2.10.0
+    container_name: harbor-jobservice
+    extra_hosts:
+	- "miniodc.database.com:192.168.168.176"
+    - "harbordr.company.com:192.168.168.178"
+
+
+
+Step9:  Run the installer
+sudo ./install.sh
+
+
++++++++++++++++++++++++++++++++++++++++++++++Harbor DR setup 192.168.168.178
+
+Step1: Install Docker
+sudo dnf config-manager --add-repo https://download.docker.com/linux/centos/docker-ce.repo
+sudo dnf install -y docker-ce docker-ce-cli containerd.io docker-compose-plugin
+
+Step2: Start and Enable Docker
+sudo systemctl enable --now docker
+
+Step3: Add the below lines in the config to allow the http connection through docker. For HTTP connection docker doesn't trust the urls of the Dokcer so allow them as below.
+vim /etc/docker/daemon.json
+{
+  "insecure-registries" : ["192.168.168.160", "192.168.168.178", "harbordc.company.com", "harbordr.company.com"]
+}
+
+- restart the docker
+systemctl restart docker
+
+Step4: Install Docker Compose (Legacy standalone if needed, or use 'docker compose')
+sudo dnf install -y curl
+
+
+Step5: Download the installer:
+- wget https://github.com/goharbor/harbor/releases/download/v2.10.0/harbor-offline-installer-v2.10.0.tgz
+- tar -xvzf harbor-offline-installer-v2.10.0.tgz
+- cd harbor
+- cp harbor.yml.tmpl harbor.yml
+
+Step6: Setup the Harbor storage
+- vim harbor.yml
+
+- Add below lines:
+
+hostname: harbordc.company.com
+
+external_url: https://harbordc.company.com
+
+--------Storage referring to the minio-dc server
+
+storage_service:
+  s3:
+	accesskey: admin
+	secretkey: password123
+	region: us-east-1
+	regionendpoint: http://192.168.168.176:9000
+	bucket: harbor-dr
+	secure: false # Set to true if using HTTPS for MinIO
+	v4auth: true
+
+
+
+
+
+Comment below :------------------
+https:
+  # https port for harbor, default is 443
+  port: 443
+  # The path of cert and key files for nginx
+  certificate: /data/harbor.crt
+  private_key: /data/harbor.key
+--------------------------------------
+
+Step7:Initialize and Install Harbor
+# Navigate back to your harbor installation folder
+cd /opt/harbor  # or wherever you extracted it
+
+# Run the prepare script to generate config files for each component
+sudo ./prepare
+
+
+Step8: After running the prepare command you will get the file docker-compose.yml . Now add the dr server ip in dc harbor file under the section core and jobservice as referring below
+
+vim docker-compose.yml
+
+core:
+    image: goharbor/harbor-core:v2.10.0
+    container_name: harbor-core
+	extra_hosts:
+      - "miniodr.database.com:192.168.168.176"
+      - "harbordc.company.com:192.168.168.160"
+
+
+ jobservice:
+    image: goharbor/harbor-jobservice:v2.10.0
+    container_name: harbor-jobservice
+	extra_hosts:
+      - "miniodr.database.com:192.168.168.176"
+      - "harbordc.company.com:192.168.168.160"
+
+
+
+Step9:  Run the installer
+sudo ./install.sh
+
+
+
+++++++++++++++++++++++++++++++++++++++++++++ Steps for setup of the DC and DR replication setup syncing for 
+
+
+
+
+++++++++++++++++++++++++++++++++++++++++++++Incase the modification has to be done.
+Step1: Make the containers down.
+- docker compose down 
+
+Step2: 
+- If you just want to update the docker-compose.yml then edit it and run the bellow command.	
+	- docker compose up -d
+- In case if the harbor.yml file you have to edit. Then the updation command will be.
+	- vim harbor.yml  ----> Upadte the file
+	- ./prepare     ----> Run the script to generate the new config files along with new docker-compose.yml
+	- docker compose up -d  ------> Create the new running containers.
+	
+
+
+
+
+
++++++++++++++++++++++++++++++++++++++++++++++Testing the pushing of the images
+1.On UI side:
+Step1: Access the production harbor UI :- http://192.168.168.160:8081/
+
+2. Go to projects tab and select the <new project> to create.
+ProjectName: dctodrsync
+Access level: If you want public then click the option else without it , that will be private.
+Project quota limit: -1 GiB means unlimited Gb size.
+Proxy cache: Let it be unselected.
+---> Finally save
+
+3. Move to the Administrattion --> Registries. ----> Select the new endpoint option.
+Provider: Harbor.
+Name: dr
+Endpoint URL: http://192.168.168.178:8081
+Access ID: admin
+Access Secret: Harbor12345
+Verify Remote Cert: Select if the ssl certificate is configured on the dr server otherwise leave it.
+---> Finally save 
+
+4. Move forward to the Administrattion --> Replications----> Select the new replication rule option.
+Name: drsync
+Replication mode: Push-based
+Destination registry: select appropriate from the drop down menu.i.e dr-http://192.168.168.178:8081
+---> Finally save
+
+
+On the commmand line:
+
+Step1: Login to the harrbor dc 
+docker login harbordc.company.com:8081
+
+Step2: Tag you image as below 
+docker tag nginx:latest harbordc.company.com:8081/dctodrsync/nginx:prod-v1
+
+Step3: Push the docker image
+docker push  harbordc.company.com:8081/dctodrsync/nginx:prod-v1
+
+
+
+
+
+
+robot$dctodrsync+prod-puller
+GljhnOaxyHUwgXefI2vUNVrar1NbGwHo
+
+
+
+
+[root@harbordc harbor]# docker logout harbordc.company.com:8081
+Removing login credentials for harbordc.company.com:8081
+[root@harbordc harbor]# docker login harbordc.company.com:8081 -u 'robot$dctodrsync+prod-puller' -p 'GljhnOaxyHUwgXefI2vUNVrar1NbGwHo'
+WARNING! Using --password via the CLI is insecure. Use --password-stdin.
+Error response from daemon: Get "http://harbordc.company.com:8081/v2/": unauthorized:
+[root@harbordc harbor]# docker login harbordc.company.com:8081 -u 'robot$dctodrsync+prod-puller' --password-stdin. 'GljhnOaxyHUwgXefI2vUNVrar1NbGwHo'
+unknown flag: --password-stdin.
+
+Usage:  docker login [OPTIONS] [SERVER]
+
+Run 'docker login --help' for more information
+[root@harbordc harbor]# docker login harbordc.company.com:8081 -u 'robot$dctodrsync+prod-puller' --password-stdin 'GljhnOaxyHUwgXefI2vUNVrar1NbGwHo'
+docker: 'docker login' requires at most 1 argument
+
+Usage:  docker login [OPTIONS] [SERVER]
+
+Run 'docker login --help' for more information
+[root@harbordc harbor]#
+
+
+
+
+/opt/jbcs-httpd24-2.4/httpd/conf/httpd.conf
+
+
+
+command to load the modules 
+/opt/jbcs-httpd24-2.4/httpd/sbin/httpd -M | grep cluster
+
+
+
+
+wget https://archive.apache.org/dist/httpd/httpd-2.4.4.tar.gz
