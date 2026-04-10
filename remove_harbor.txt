@@ -1,0 +1,39 @@
+✅ STEP 1: Stop Harbor
+cd /opt/harbor   # or your install dir
+docker-compose down
+✅ STEP 2: Remove ALL Harbor Containers
+docker ps -a | grep harbor | awk '{print $1}' | xargs -r docker rm -f
+✅ STEP 3: Remove Harbor Images
+docker images | grep harbor | awk '{print $3}' | xargs -r docker rmi -f
+✅ STEP 4: Remove Volumes (VERY IMPORTANT)
+docker volume ls | grep harbor | awk '{print $2}' | xargs -r docker volume rm
+✅ STEP 5: Delete Harbor Data Directory
+rm -rf /data/*
+
+👉 This removes:
+
+registry data
+database
+redis
+jobservice logs
+✅ STEP 6: Remove Harbor Installation Directory
+rm -rf /opt/harbor
+
+(or wherever you extracted Harbor)
+
+✅ STEP 7: Remove Docker Networks
+docker network ls | grep harbor | awk '{print $1}' | xargs -r docker network rm
+✅ STEP 8: Clean Docker (Optional but Recommended)
+docker system prune -a --volumes -f
+✅ STEP 9: Remove MinIO (if used with Harbor)
+
+If you deployed MinIO separately:
+
+docker ps -a | grep minio | awk '{print $1}' | xargs -r docker rm -f
+rm -rf /minio /data/minio
+✅ STEP 10: Verify Clean System
+docker ps -a
+docker images
+ls /data
+
+👉 Should be empty / no Harbor traces
