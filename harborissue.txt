@@ -1,18 +1,17 @@
-2026-04-10T11:20:22Z [INFO] [/controller/replication/transfer/image/transfer.go:140]: client for source registry [type: harbor, URL: http://core:8080, insecure: true] created
-2026-04-10T11:20:22Z [INFO] [/controller/replication/transfer/image/transfer.go:150]: client for destination registry [type: harbor, URL: http://centralharbordr.finopaymentbank.in:8081, insecure: false] created
-2026-04-10T11:20:22Z [INFO] [/controller/replication/transfer/image/transfer.go:183]: copying testquay/openshift-release-dev/ocp-release:[4.16.5-x86_64](source registry) to testquay/openshift-release-dev/ocp-release:[4.16.5-x86_64](destination registry)...
-2026-04-10T11:20:22Z [INFO] [/controller/replication/transfer/image/transfer.go:211]: copying testquay/openshift-release-dev/ocp-release:4.16.5-x86_64(source registry) to testquay/openshift-release-dev/ocp-release:4.16.5-x86_64(destination registry)...
-2026-04-10T11:20:22Z [INFO] [/controller/replication/transfer/image/transfer.go:465]: pulling the manifest of artifact testquay/openshift-release-dev/ocp-release:4.16.5-x86_64 ...
-2026-04-10T11:20:24Z [INFO] [/controller/replication/transfer/image/transfer.go:471]: the manifest of artifact testquay/openshift-release-dev/ocp-release:4.16.5-x86_64 pulled
-2026-04-10T11:20:24Z [INFO] [/controller/replication/transfer/image/transfer.go:290]: copying the blob sha256:8ed98763da0c7ce719548cd314163de2e421b603b7e5358b4534972fe36c34e0(the 1th running)...
-2026-04-10T11:20:25Z [ERROR] [/controller/replication/transfer/image/transfer.go:396]: failed to pushing the blob sha256:8ed98763da0c7ce719548cd314163de2e421b603b7e5358b4534972fe36c34e0, size 1718: http status code: 500, body: {"errors":[{"code":"UNKNOWN","message":"unknown error","detail":{"DriverName":"s3aws","Enclosed":{"RequestFailure":{}}}}]}
-2026-04-10T11:20:25Z [INFO] [/controller/replication/transfer/image/transfer.go:298]: will retry 2s later
-2026-04-10T11:20:27Z [INFO] [/controller/replication/transfer/image/transfer.go:290]: copying the blob sha256:8ed98763da0c7ce719548cd314163de2e421b603b7e5358b4534972fe36c34e0(the 2th running)...
-2026-04-10T11:20:27Z [ERROR] [/controller/replication/transfer/image/transfer.go:396]: failed to pushing the blob sha256:8ed98763da0c7ce719548cd314163de2e421b603b7e5358b4534972fe36c34e0, size 1718: http status code: 500, body: {"errors":[{"code":"UNKNOWN","message":"unknown error","detail":{"DriverName":"s3aws","Enclosed":{"RequestFailure":{}}}}]}
-2026-04-10T11:20:27Z [INFO] [/controller/replication/transfer/image/transfer.go:298]: will retry 4s later
-2026-04-10T11:20:31Z [INFO] [/controller/replication/transfer/image/transfer.go:290]: copying the blob sha256:8ed98763da0c7ce719548cd314163de2e421b603b7e5358b4534972fe36c34e0(the 3th running)...
-2026-04-10T11:20:31Z [ERROR] [/controller/replication/transfer/image/transfer.go:396]: failed to pushing the blob sha256:8ed98763da0c7ce719548cd314163de2e421b603b7e5358b4534972fe36c34e0, size 1718: http status code: 500, body: {"errors":[{"code":"UNKNOWN","message":"unknown error","detail":{"DriverName":"s3aws","Enclosed":{"RequestFailure":{}}}}]}
-2026-04-10T11:20:31Z [INFO] [/controller/replication/transfer/image/transfer.go:298]: will retry 8s later
-2026-04-10T11:20:39Z [INFO] [/controller/replication/transfer/image/transfer.go:290]: copying the blob sha256:8ed98763da0c7ce719548cd314163de2e421b603b7e5358b4534972fe36c34e0(the 4th running)...
-2026-04-10T11:20:39Z [ERROR] [/controller/replication/transfer/image/transfer.go:396]: failed to pushing the blob sha256:8ed98763da0c7ce719548cd314163de2e421b603b7e5358b4534972fe36c34e0, size 1718: http status code: 500, body: {"errors":[{"code":"UNKNOWN","message":"unknown error","detail":{"DriverName":"s3aws","Enclosed":{"RequestFailure":{}}}}]}
-2026-04-10T11:20:39Z [INFO] [/controller/replication/transfer/image/transfer.go:298]: will retry 16s later
+10.181.16.153   centralharbordc
+10.181.16.154   centralminiodc.
+10.182.16.167   centralharbordr
+10.182.16.168   centralminiodr.
+
+
+
+storage_service:
+  s3:
+    accesskey: admin
+    secretkey: centr@lmin#20262026
+    bucket: test
+    region: us-east-1
+    endpoint: http://10.182.16.168:9000
+    regionendpoint: http://10.182.16.168:9000
+    secure: false # Set to true if using HTTPS for MinIO
+    v4auth: true
