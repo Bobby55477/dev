@@ -1,17 +1,1 @@
-10.181.16.153   centralharbordc
-10.181.16.154   centralminiodc.
-10.182.16.167   centralharbordr
-10.182.16.168   centralminiodr.
-
-
-
-storage_service:
-  s3:
-    accesskey: admin
-    secretkey: centr@lmin#20262026
-    bucket: test
-    region: us-east-1
-    endpoint: http://10.182.16.168:9000
-    regionendpoint: http://10.182.16.168:9000
-    secure: false # Set to true if using HTTPS for MinIO
-    v4auth: true
+docker exec -it harbor-registry curl -I http://10.182.16.168:9000/minio/health/live
