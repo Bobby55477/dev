@@ -1,0 +1,97 @@
+Managing the minio storage
+
+1. Install & Configure MinIO Client (mc)
+wget https://dl.min.io/client/mc/release/linux-amd64/mc
+chmod +x mc
+mv mc /usr/local/bin/
+
+2. Add your MinIO aliases (DC + DR)
+syntax:
+mc alias set <alias_name> http://<minio_server_ip>:<minio_container_internal_port> <admin_username>  <minio_admin_password>
+
+eg.
+mc alias set dc http://192.168.168.177:9000 admin password123
+mc alias set dr http://192.168.168.176:9000 admin password123
+
+3. Bucket Operations (Daily Admin Tasks)
+
+- List buckets
+	- mc ls <alias_name>
+	eg. mc ls dc
+
+- Create bucket
+	- mc mb <alias_name>/<bucket_name>
+	eg. mc mb dc/harbor-dc
+
+- Delete bucket (force)
+	- mc rb  <alias_name>/<bucket_name> --force
+	eg. mc rb dc/harbor-dc --force
+
+- Check bucket size
+	- mc du <alias_name>/<bucket_name>
+	eg. mc du dc/harbor-dc
+
+- List objects inside bucket
+	- mc ls <alias_name>/<bucket_name>
+	eg. mc ls dc/harbor-dc
+
+- Manually upload the local file
+	- mc cp <file_name> <alias_name>/<bucket_name>
+	eg. mc cp test.txt dc/harbor-dc/
+
+- Download the file
+	- mc cp <alias_name>/<bucket_name>/<file_name> .
+	eg. mc cp dc/harbor-dc/test.txt .
+	
+- Mirror (VERY IMPORTANT for backup)
+	- mc mirror <old_alias_name>/<bucket_name> <new_alias_name>/<bucket_name>
+	eg. mc mirror dc/harbor-dc dr/harbor-dc
+👉 Used for:
+	Backup
+	Migration
+	DR sync (manual)
+	
+👤 3. User Management (CRITICAL FOR PRODUCTION)
+- List users
+	- Syntax: mc admin user list <alias_name>
+	eg.  mc admin user list dc
+- Create user
+	- Syntax: mc admin user add <alias_name> <username> <password>
+	eg. mc admin user add dc devuser StrongPass@123
+- Disable user
+	- Syntax: mc admin user disable <alias_name> <username>
+	eg. mc admin user disable dc devuser
+- Remove user
+	- Syntax: mc admin user remove <alias_name> <username>
+	eg. mc admin user remove dc devuser
+
+
+🔐 4. Policy Management (RBAC)
+
+🔁 6. Replication Commands (DR Level)
+*****Note:******* Before replication always remember on the minio dr there should be no single bucket. The minio dr should be completely empty
+- Check replication status
+	- mc admin replicate info dc
+	eg.mc admin replicate info dc
+- Add site replication
+	- mc admin replicate add dc dr
+	eg. mc admin replicate add dc dr
+- Remove replication
+	- mc admin replicate rm dc dr
+
+📊 7. Monitoring & Health
+- Cluster info
+	mc admin info dc
+- Disk usage
+	mc admin info dc | grep drive
+-  Heal (VERY IMPORTANT)
+	mc admin heal dc
+	👉 Used when:
+		Disk failure
+		Corruption
+		Node recovery
+
+🚨 8. Debugging & Logs
+- Logs	
+	mc admin logs dc
+	
