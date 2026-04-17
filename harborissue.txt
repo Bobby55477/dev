@@ -1,4 +1,211 @@
-[root@centralharbordc ~]# curl -u admin:centr@l#20262026  http://centralharbordc.finopaymentbank.in:8081/api/v2.0/projects/
-[{"creation_time":"2026-04-13T07:03:18.674Z","current_user_role_id":1,"current_user_role_ids":[1],"cve_allowlist":{"creation_time":"0001-01-01T00:00:00.000Z","id":2,"items":[],"project_id":2,"update_time":"0001-01-01T00:00:00.000Z"},"metadata":{"auto_sbom_generation":"false","auto_scan":"true","enable_content_trust":"false","enable_content_trust_cosign":"false","prevent_vul":"false","public":"true","reuse_sys_cve_allowlist":"true","severity":"low"},"name":"dctodrsync","owner_id":1,"owner_name":"admin","project_id":2,"repo_count":2,"update_time":"2026-04-13T07:03:18.674Z"},{"creation_time":"2026-04-17T05:54:46.551Z","current_user_role_id":1,"current_user_role_ids":[1],"cve_allowlist":{"creation_time":"0001-01-01T00:00:00.000Z","id":6,"items":[],"project_id":5,"update_time":"0001-01-01T00:00:00.000Z"},"metadata":{"auto_sbom_generation":"false","auto_scan":"false","enable_content_trust_cosign":"false","max_upstream_conn":"-1","prevent_vul":"true","proxy_speed_kb":"-1024","public":"true","retention_id":"2","reuse_sys_cve_allowlist":"true","severity":"low"},"name":"dockerhub-proxy","owner_id":1,"owner_name":"admin","project_id":5,"registry_id":4,"repo_count":0,"update_time":"2026-04-17T05:54:46.551Z"},{"creation_time":"2026-04-13T14:31:33.369Z","current_user_role_id":1,"current_user_role_ids":[1],"cve_allowlist":{"creation_time":"0001-01-01T00:00:00.000Z","id":5,"items":[],"project_id":4,"update_time":"0001-01-01T00:00:00.000Z"},"metadata":{"max_upstream_conn":"-1","proxy_speed_kb":"-1","public":"true","retention_id":"1"},"name":"karplexus-azure","owner_id":1,"owner_name":"admin","project_id":4,"registry_id":3,"repo_count":0,"update_time":"2026-04-13T14:31:33.369Z"},{"creation_time":"2026-04-13T06:57:57.743Z","current_user_role_id":1,"current_user_role_ids":[1],"cve_allowlist":{"creation_time":"0001-01-01T00:00:00.000Z","id":1,"items":[],"project_id":1,"update_time":"0001-01-01T00:00:00.000Z"},"metadata":{"public":"true"},"name":"library","owner_id":1,"owner_name":"admin","project_id":1,"repo_count":0,"update_time":"2026-04-13T06:57:57.743Z"}]
-[root@centralharbordc ~]# curl -u admin:centr@l#20262026  http://centralharbordc.finopaymentbank.in:8081/api/v2.0/projects/dockerhub-proxy/repositories
-[]
+2026-04-17T06:43:41Z [INFO] [/pkg/scan/job.go:396]: {
+  "uuid": "cfeace1b-372e-11f1-8e04-660fe9ad6b18",
+  "name": "Trivy",
+  "description": "The Trivy scanner adapter",
+  "url": "http://trivy-adapter:8080",
+  "disabled": false,
+  "is_default": true,
+  "health": "healthy",
+  "auth": "",
+  "access_credential": "[HIDDEN]",
+  "skip_certVerify": false,
+  "use_internal_addr": true,
+  "adapter": "Trivy",
+  "vendor": "Aqua Security",
+  "version": "v0.68.2",
+  "create_time": "2026-04-13T11:49:22.152358Z",
+  "update_time": "2026-04-13T11:49:22.152359Z"
+}
+2026-04-17T06:43:41Z [INFO] [/pkg/scan/job.go:396]: {
+  "registry": {
+    "url": "http://core:8080",
+    "authorization": "[HIDDEN]",
+    "insecure": false
+  },
+  "artifact": {
+    "namespace_id": 5,
+    "repository": "dockerhub-proxy/library/alpine",
+    "tag": "",
+    "digest": "sha256:4d889c14e7d5a73929ab00be2ef8ff22437e7cbc545931e52554a7b00e123d8b",
+    "mime_type": "application/vnd.oci.image.manifest.v1+json",
+    "size": 3865822
+  },
+  "enabled_capabilities": [
+    {
+      "type": "vulnerability",
+      "produces_mime_types": [
+        "application/vnd.security.vulnerability.report; version=1.1"
+      ],
+      "parameters": null
+    }
+  ]
+}
+2026-04-17T06:43:41Z [INFO] [/pkg/scan/job.go:172]: Report mime types: [application/vnd.security.vulnerability.report; version=1.1]
+2026-04-17T06:43:41Z [INFO] [/pkg/scan/job.go:229]: Get report for mime type: application/vnd.security.vulnerability.report; version=1.1
+2026-04-17T06:43:43Z [INFO] [/pkg/scan/job.go:255]: Report with mime type application/vnd.security.vulnerability.report; version=1.1 is not ready yet, retry after 5 seconds
+2026-04-17T06:43:48Z [INFO] [/pkg/scan/job.go:255]: Report with mime type application/vnd.security.vulnerability.report; version=1.1 is not ready yet, retry after 5 seconds
+2026-04-17T06:43:53Z [INFO] [/pkg/scan/job.go:255]: Report with mime type application/vnd.security.vulnerability.report; version=1.1 is not ready yet, retry after 5 seconds
+2026-04-17T06:43:58Z [INFO] [/pkg/scan/job.go:255]: Report with mime type application/vnd.security.vulnerability.report; version=1.1 is not ready yet, retry after 5 seconds
+2026-04-17T06:44:03Z [INFO] [/pkg/scan/job.go:255]: Report with mime type application/vnd.security.vulnerability.report; version=1.1 is not ready yet, retry after 5 seconds
+2026-04-17T06:44:08Z [INFO] [/pkg/scan/job.go:255]: Report with mime type application/vnd.security.vulnerability.report; version=1.1 is not ready yet, retry after 5 seconds
+2026-04-17T06:44:13Z [INFO] [/pkg/scan/job.go:255]: Report with mime type application/vnd.security.vulnerability.report; version=1.1 is not ready yet, retry after 5 seconds
+2026-04-17T06:44:18Z [INFO] [/pkg/scan/job.go:255]: Report with mime type application/vnd.security.vulnerability.report; version=1.1 is not ready yet, retry after 5 seconds
+2026-04-17T06:44:23Z [INFO] [/pkg/scan/job.go:255]: Report with mime type application/vnd.security.vulnerability.report; version=1.1 is not ready yet, retry after 5 seconds
+2026-04-17T06:44:28Z [INFO] [/pkg/scan/job.go:255]: Report with mime type application/vnd.security.vulnerability.report; version=1.1 is not ready yet, retry after 5 seconds
+2026-04-17T06:44:33Z [INFO] [/pkg/scan/job.go:255]: Report with mime type application/vnd.security.vulnerability.report; version=1.1 is not ready yet, retry after 5 seconds
+2026-04-17T06:44:38Z [INFO] [/pkg/scan/job.go:255]: Report with mime type application/vnd.security.vulnerability.report; version=1.1 is not ready yet, retry after 5 seconds
+2026-04-17T06:44:43Z [INFO] [/pkg/scan/job.go:255]: Report with mime type application/vnd.security.vulnerability.report; version=1.1 is not ready yet, retry after 5 seconds
+2026-04-17T06:44:48Z [INFO] [/pkg/scan/job.go:255]: Report with mime type application/vnd.security.vulnerability.report; version=1.1 is not ready yet, retry after 5 seconds
+2026-04-17T06:44:53Z [INFO] [/pkg/scan/job.go:255]: Report with mime type application/vnd.security.vulnerability.report; version=1.1 is not ready yet, retry after 5 seconds
+2026-04-17T06:44:58Z [INFO] [/pkg/scan/job.go:255]: Report with mime type application/vnd.security.vulnerability.report; version=1.1 is not ready yet, retry after 5 seconds
+2026-04-17T06:45:03Z [INFO] [/pkg/scan/job.go:255]: Report with mime type application/vnd.security.vulnerability.report; version=1.1 is not ready yet, retry after 5 seconds
+2026-04-17T06:45:08Z [INFO] [/pkg/scan/job.go:255]: Report with mime type application/vnd.security.vulnerability.report; version=1.1 is not ready yet, retry after 5 seconds
+2026-04-17T06:45:13Z [INFO] [/pkg/scan/job.go:255]: Report with mime type application/vnd.security.vulnerability.report; version=1.1 is not ready yet, retry after 5 seconds
+2026-04-17T06:45:18Z [INFO] [/pkg/scan/job.go:255]: Report with mime type application/vnd.security.vulnerability.report; version=1.1 is not ready yet, retry after 5 seconds
+2026-04-17T06:45:23Z [INFO] [/pkg/scan/job.go:255]: Report with mime type application/vnd.security.vulnerability.report; version=1.1 is not ready yet, retry after 5 seconds
+2026-04-17T06:45:28Z [INFO] [/pkg/scan/job.go:255]: Report with mime type application/vnd.security.vulnerability.report; version=1.1 is not ready yet, retry after 5 seconds
+2026-04-17T06:45:33Z [INFO] [/pkg/scan/job.go:255]: Report with mime type application/vnd.security.vulnerability.report; version=1.1 is not ready yet, retry after 5 seconds
+2026-04-17T06:45:38Z [INFO] [/pkg/scan/job.go:255]: Report with mime type application/vnd.security.vulnerability.report; version=1.1 is not ready yet, retry after 5 seconds
+2026-04-17T06:45:43Z [INFO] [/pkg/scan/job.go:255]: Report with mime type application/vnd.security.vulnerability.report; version=1.1 is not ready yet, retry after 5 seconds
+2026-04-17T06:45:48Z [INFO] [/pkg/scan/job.go:255]: Report with mime type application/vnd.security.vulnerability.report; version=1.1 is not ready yet, retry after 5 seconds
+2026-04-17T06:45:53Z [INFO] [/pkg/scan/job.go:255]: Report with mime type application/vnd.security.vulnerability.report; version=1.1 is not ready yet, retry after 5 seconds
+2026-04-17T06:45:58Z [INFO] [/pkg/scan/job.go:255]: Report with mime type application/vnd.security.vulnerability.report; version=1.1 is not ready yet, retry after 5 seconds
+2026-04-17T06:46:03Z [INFO] [/pkg/scan/job.go:255]: Report with mime type application/vnd.security.vulnerability.report; version=1.1 is not ready yet, retry after 5 seconds
+2026-04-17T06:46:08Z [INFO] [/pkg/scan/job.go:255]: Report with mime type application/vnd.security.vulnerability.report; version=1.1 is not ready yet, retry after 5 seconds
+2026-04-17T06:46:13Z [INFO] [/pkg/scan/job.go:255]: Report with mime type application/vnd.security.vulnerability.report; version=1.1 is not ready yet, retry after 5 seconds
+2026-04-17T06:46:18Z [INFO] [/pkg/scan/job.go:255]: Report with mime type application/vnd.security.vulnerability.report; version=1.1 is not ready yet, retry after 5 seconds
+2026-04-17T06:46:23Z [INFO] [/pkg/scan/job.go:255]: Report with mime type application/vnd.security.vulnerability.report; version=1.1 is not ready yet, retry after 5 seconds
+2026-04-17T06:46:28Z [INFO] [/pkg/scan/job.go:255]: Report with mime type application/vnd.security.vulnerability.report; version=1.1 is not ready yet, retry after 5 seconds
+2026-04-17T06:46:33Z [INFO] [/pkg/scan/job.go:255]: Report with mime type application/vnd.security.vulnerability.report; version=1.1 is not ready yet, retry after 5 seconds
+2026-04-17T06:46:38Z [INFO] [/pkg/scan/job.go:255]: Report with mime type application/vnd.security.vulnerability.report; version=1.1 is not ready yet, retry after 5 seconds
+2026-04-17T06:46:43Z [INFO] [/pkg/scan/job.go:255]: Report with mime type application/vnd.security.vulnerability.report; version=1.1 is not ready yet, retry after 5 seconds
+2026-04-17T06:46:48Z [INFO] [/pkg/scan/job.go:255]: Report with mime type application/vnd.security.vulnerability.report; version=1.1 is not ready yet, retry after 5 seconds
+2026-04-17T06:46:53Z [INFO] [/pkg/scan/job.go:255]: Report with mime type application/vnd.security.vulnerability.report; version=1.1 is not ready yet, retry after 5 seconds
+2026-04-17T06:46:58Z [INFO] [/pkg/scan/job.go:255]: Report with mime type application/vnd.security.vulnerability.report; version=1.1 is not ready yet, retry after 5 seconds
+2026-04-17T06:47:03Z [INFO] [/pkg/scan/job.go:255]: Report with mime type application/vnd.security.vulnerability.report; version=1.1 is not ready yet, retry after 5 seconds
+2026-04-17T06:47:08Z [INFO] [/pkg/scan/job.go:255]: Report with mime type application/vnd.security.vulnerability.report; version=1.1 is not ready yet, retry after 5 seconds
+2026-04-17T06:47:13Z [INFO] [/pkg/scan/job.go:255]: Report with mime type application/vnd.security.vulnerability.report; version=1.1 is not ready yet, retry after 5 seconds
+2026-04-17T06:47:18Z [INFO] [/pkg/scan/job.go:255]: Report with mime type application/vnd.security.vulnerability.report; version=1.1 is not ready yet, retry after 5 seconds
+2026-04-17T06:47:23Z [INFO] [/pkg/scan/job.go:255]: Report with mime type application/vnd.security.vulnerability.report; version=1.1 is not ready yet, retry after 5 seconds
+2026-04-17T06:47:28Z [INFO] [/pkg/scan/job.go:255]: Report with mime type application/vnd.security.vulnerability.report; version=1.1 is not ready yet, retry after 5 seconds
+2026-04-17T06:47:33Z [INFO] [/pkg/scan/job.go:255]: Report with mime type application/vnd.security.vulnerability.report; version=1.1 is not ready yet, retry after 5 seconds
+2026-04-17T06:47:38Z [INFO] [/pkg/scan/job.go:255]: Report with mime type application/vnd.security.vulnerability.report; version=1.1 is not ready yet, retry after 5 seconds
+2026-04-17T06:47:43Z [INFO] [/pkg/scan/job.go:255]: Report with mime type application/vnd.security.vulnerability.report; version=1.1 is not ready yet, retry after 5 seconds
+2026-04-17T06:47:48Z [INFO] [/pkg/scan/job.go:255]: Report with mime type application/vnd.security.vulnerability.report; version=1.1 is not ready yet, retry after 5 seconds
+2026-04-17T06:47:53Z [INFO] [/pkg/scan/job.go:255]: Report with mime type application/vnd.security.vulnerability.report; version=1.1 is not ready yet, retry after 5 seconds
+2026-04-17T06:47:58Z [INFO] [/pkg/scan/job.go:255]: Report with mime type application/vnd.security.vulnerability.report; version=1.1 is not ready yet, retry after 5 seconds
+2026-04-17T06:48:03Z [INFO] [/pkg/scan/job.go:255]: Report with mime type application/vnd.security.vulnerability.report; version=1.1 is not ready yet, retry after 5 seconds
+2026-04-17T06:48:08Z [INFO] [/pkg/scan/job.go:255]: Report with mime type application/vnd.security.vulnerability.report; version=1.1 is not ready yet, retry after 5 seconds
+2026-04-17T06:48:13Z [INFO] [/pkg/scan/job.go:255]: Report with mime type application/vnd.security.vulnerability.report; version=1.1 is not ready yet, retry after 5 seconds
+2026-04-17T06:48:18Z [INFO] [/pkg/scan/job.go:255]: Report with mime type application/vnd.security.vulnerability.report; version=1.1 is not ready yet, retry after 5 seconds
+2026-04-17T06:48:23Z [INFO] [/pkg/scan/job.go:255]: Report with mime type application/vnd.security.vulnerability.report; version=1.1 is not ready yet, retry after 5 seconds
+2026-04-17T06:48:28Z [INFO] [/pkg/scan/job.go:255]: Report with mime type application/vnd.security.vulnerability.report; version=1.1 is not ready yet, retry after 5 seconds
+2026-04-17T06:48:33Z [INFO] [/pkg/scan/job.go:255]: Report with mime type application/vnd.security.vulnerability.report; version=1.1 is not ready yet, retry after 5 seconds
+2026-04-17T06:48:38Z [INFO] [/pkg/scan/job.go:255]: Report with mime type application/vnd.security.vulnerability.report; version=1.1 is not ready yet, retry after 5 seconds
+2026-04-17T06:48:43Z [INFO] [/pkg/scan/job.go:255]: Report with mime type application/vnd.security.vulnerability.report; version=1.1 is not ready yet, retry after 5 seconds
+2026-04-17T06:48:48Z [INFO] [/pkg/scan/job.go:255]: Report with mime type application/vnd.security.vulnerability.report; version=1.1 is not ready yet, retry after 5 seconds
+2026-04-17T06:48:53Z [INFO] [/pkg/scan/job.go:255]: Report with mime type application/vnd.security.vulnerability.report; version=1.1 is not ready yet, retry after 5 seconds
+2026-04-17T06:48:58Z [INFO] [/pkg/scan/job.go:255]: Report with mime type application/vnd.security.vulnerability.report; version=1.1 is not ready yet, retry after 5 seconds
+2026-04-17T06:49:03Z [INFO] [/pkg/scan/job.go:255]: Report with mime type application/vnd.security.vulnerability.report; version=1.1 is not ready yet, retry after 5 seconds
+2026-04-17T06:49:08Z [INFO] [/pkg/scan/job.go:255]: Report with mime type application/vnd.security.vulnerability.report; version=1.1 is not ready yet, retry after 5 seconds
+2026-04-17T06:49:13Z [INFO] [/pkg/scan/job.go:255]: Report with mime type application/vnd.security.vulnerability.report; version=1.1 is not ready yet, retry after 5 seconds
+2026-04-17T06:49:18Z [INFO] [/pkg/scan/job.go:255]: Report with mime type application/vnd.security.vulnerability.report; version=1.1 is not ready yet, retry after 5 seconds
+2026-04-17T06:49:23Z [INFO] [/pkg/scan/job.go:255]: Report with mime type application/vnd.security.vulnerability.report; version=1.1 is not ready yet, retry after 5 seconds
+2026-04-17T06:49:28Z [INFO] [/pkg/scan/job.go:255]: Report with mime type application/vnd.security.vulnerability.report; version=1.1 is not ready yet, retry after 5 seconds
+2026-04-17T06:49:33Z [INFO] [/pkg/scan/job.go:255]: Report with mime type application/vnd.security.vulnerability.report; version=1.1 is not ready yet, retry after 5 seconds
+2026-04-17T06:49:38Z [INFO] [/pkg/scan/job.go:255]: Report with mime type application/vnd.security.vulnerability.report; version=1.1 is not ready yet, retry after 5 seconds
+2026-04-17T06:49:43Z [INFO] [/pkg/scan/job.go:255]: Report with mime type application/vnd.security.vulnerability.report; version=1.1 is not ready yet, retry after 5 seconds
+2026-04-17T06:49:48Z [INFO] [/pkg/scan/job.go:255]: Report with mime type application/vnd.security.vulnerability.report; version=1.1 is not ready yet, retry after 5 seconds
+2026-04-17T06:49:53Z [INFO] [/pkg/scan/job.go:255]: Report with mime type application/vnd.security.vulnerability.report; version=1.1 is not ready yet, retry after 5 seconds
+2026-04-17T06:49:58Z [INFO] [/pkg/scan/job.go:255]: Report with mime type application/vnd.security.vulnerability.report; version=1.1 is not ready yet, retry after 5 seconds
+2026-04-17T06:50:03Z [INFO] [/pkg/scan/job.go:255]: Report with mime type application/vnd.security.vulnerability.report; version=1.1 is not ready yet, retry after 5 seconds
+2026-04-17T06:50:08Z [INFO] [/pkg/scan/job.go:255]: Report with mime type application/vnd.security.vulnerability.report; version=1.1 is not ready yet, retry after 5 seconds
+2026-04-17T06:50:13Z [INFO] [/pkg/scan/job.go:255]: Report with mime type application/vnd.security.vulnerability.report; version=1.1 is not ready yet, retry after 5 seconds
+2026-04-17T06:50:18Z [INFO] [/pkg/scan/job.go:255]: Report with mime type application/vnd.security.vulnerability.report; version=1.1 is not ready yet, retry after 5 seconds
+2026-04-17T06:50:23Z [INFO] [/pkg/scan/job.go:255]: Report with mime type application/vnd.security.vulnerability.report; version=1.1 is not ready yet, retry after 5 seconds
+2026-04-17T06:50:28Z [INFO] [/pkg/scan/job.go:255]: Report with mime type application/vnd.security.vulnerability.report; version=1.1 is not ready yet, retry after 5 seconds
+2026-04-17T06:50:33Z [INFO] [/pkg/scan/job.go:255]: Report with mime type application/vnd.security.vulnerability.report; version=1.1 is not ready yet, retry after 5 seconds
+2026-04-17T06:50:38Z [INFO] [/pkg/scan/job.go:255]: Report with mime type application/vnd.security.vulnerability.report; version=1.1 is not ready yet, retry after 5 seconds
+2026-04-17T06:50:43Z [INFO] [/pkg/scan/job.go:255]: Report with mime type application/vnd.security.vulnerability.report; version=1.1 is not ready yet, retry after 5 seconds
+2026-04-17T06:50:48Z [INFO] [/pkg/scan/job.go:255]: Report with mime type application/vnd.security.vulnerability.report; version=1.1 is not ready yet, retry after 5 seconds
+2026-04-17T06:50:53Z [INFO] [/pkg/scan/job.go:255]: Report with mime type application/vnd.security.vulnerability.report; version=1.1 is not ready yet, retry after 5 seconds
+2026-04-17T06:50:58Z [INFO] [/pkg/scan/job.go:255]: Report with mime type application/vnd.security.vulnerability.report; version=1.1 is not ready yet, retry after 5 seconds
+2026-04-17T06:51:03Z [INFO] [/pkg/scan/job.go:255]: Report with mime type application/vnd.security.vulnerability.report; version=1.1 is not ready yet, retry after 5 seconds
+2026-04-17T06:51:08Z [INFO] [/pkg/scan/job.go:255]: Report with mime type application/vnd.security.vulnerability.report; version=1.1 is not ready yet, retry after 5 seconds
+2026-04-17T06:51:13Z [INFO] [/pkg/scan/job.go:255]: Report with mime type application/vnd.security.vulnerability.report; version=1.1 is not ready yet, retry after 5 seconds
+2026-04-17T06:51:18Z [INFO] [/pkg/scan/job.go:255]: Report with mime type application/vnd.security.vulnerability.report; version=1.1 is not ready yet, retry after 5 seconds
+2026-04-17T06:51:23Z [INFO] [/pkg/scan/job.go:255]: Report with mime type application/vnd.security.vulnerability.report; version=1.1 is not ready yet, retry after 5 seconds
+2026-04-17T06:51:28Z [INFO] [/pkg/scan/job.go:255]: Report with mime type application/vnd.security.vulnerability.report; version=1.1 is not ready yet, retry after 5 seconds
+2026-04-17T06:51:33Z [INFO] [/pkg/scan/job.go:255]: Report with mime type application/vnd.security.vulnerability.report; version=1.1 is not ready yet, retry after 5 seconds
+2026-04-17T06:51:38Z [INFO] [/pkg/scan/job.go:255]: Report with mime type application/vnd.security.vulnerability.report; version=1.1 is not ready yet, retry after 5 seconds
+2026-04-17T06:51:43Z [INFO] [/pkg/scan/job.go:255]: Report with mime type application/vnd.security.vulnerability.report; version=1.1 is not ready yet, retry after 5 seconds
+2026-04-17T06:51:48Z [INFO] [/pkg/scan/job.go:255]: Report with mime type application/vnd.security.vulnerability.report; version=1.1 is not ready yet, retry after 5 seconds
+2026-04-17T06:51:53Z [INFO] [/pkg/scan/job.go:255]: Report with mime type application/vnd.security.vulnerability.report; version=1.1 is not ready yet, retry after 5 seconds
+2026-04-17T06:51:58Z [INFO] [/pkg/scan/job.go:255]: Report with mime type application/vnd.security.vulnerability.report; version=1.1 is not ready yet, retry after 5 seconds
+2026-04-17T06:52:03Z [INFO] [/pkg/scan/job.go:255]: Report with mime type application/vnd.security.vulnerability.report; version=1.1 is not ready yet, retry after 5 seconds
+2026-04-17T06:52:08Z [INFO] [/pkg/scan/job.go:255]: Report with mime type application/vnd.security.vulnerability.report; version=1.1 is not ready yet, retry after 5 seconds
+2026-04-17T06:52:13Z [INFO] [/pkg/scan/job.go:255]: Report with mime type application/vnd.security.vulnerability.report; version=1.1 is not ready yet, retry after 5 seconds
+2026-04-17T06:52:18Z [INFO] [/pkg/scan/job.go:255]: Report with mime type application/vnd.security.vulnerability.report; version=1.1 is not ready yet, retry after 5 seconds
+2026-04-17T06:52:23Z [INFO] [/pkg/scan/job.go:255]: Report with mime type application/vnd.security.vulnerability.report; version=1.1 is not ready yet, retry after 5 seconds
+2026-04-17T06:52:28Z [INFO] [/pkg/scan/job.go:255]: Report with mime type application/vnd.security.vulnerability.report; version=1.1 is not ready yet, retry after 5 seconds
+2026-04-17T06:52:33Z [INFO] [/pkg/scan/job.go:255]: Report with mime type application/vnd.security.vulnerability.report; version=1.1 is not ready yet, retry after 5 seconds
+2026-04-17T06:52:38Z [INFO] [/pkg/scan/job.go:255]: Report with mime type application/vnd.security.vulnerability.report; version=1.1 is not ready yet, retry after 5 seconds
+2026-04-17T06:52:43Z [INFO] [/pkg/scan/job.go:255]: Report with mime type application/vnd.security.vulnerability.report; version=1.1 is not ready yet, retry after 5 seconds
+2026-04-17T06:52:48Z [INFO] [/pkg/scan/job.go:255]: Report with mime type application/vnd.security.vulnerability.report; version=1.1 is not ready yet, retry after 5 seconds
+2026-04-17T06:52:53Z [INFO] [/pkg/scan/job.go:255]: Report with mime type application/vnd.security.vulnerability.report; version=1.1 is not ready yet, retry after 5 seconds
+2026-04-17T06:52:58Z [INFO] [/pkg/scan/job.go:255]: Report with mime type application/vnd.security.vulnerability.report; version=1.1 is not ready yet, retry after 5 seconds
+2026-04-17T06:53:03Z [INFO] [/pkg/scan/job.go:255]: Report with mime type application/vnd.security.vulnerability.report; version=1.1 is not ready yet, retry after 5 seconds
+2026-04-17T06:53:08Z [INFO] [/pkg/scan/job.go:255]: Report with mime type application/vnd.security.vulnerability.report; version=1.1 is not ready yet, retry after 5 seconds
+2026-04-17T06:53:13Z [INFO] [/pkg/scan/job.go:255]: Report with mime type application/vnd.security.vulnerability.report; version=1.1 is not ready yet, retry after 5 seconds
+2026-04-17T06:53:18Z [INFO] [/pkg/scan/job.go:255]: Report with mime type application/vnd.security.vulnerability.report; version=1.1 is not ready yet, retry after 5 seconds
+2026-04-17T06:53:23Z [INFO] [/pkg/scan/job.go:255]: Report with mime type application/vnd.security.vulnerability.report; version=1.1 is not ready yet, retry after 5 seconds
+2026-04-17T06:53:28Z [INFO] [/pkg/scan/job.go:255]: Report with mime type application/vnd.security.vulnerability.report; version=1.1 is not ready yet, retry after 5 seconds
+2026-04-17T06:53:33Z [INFO] [/pkg/scan/job.go:255]: Report with mime type application/vnd.security.vulnerability.report; version=1.1 is not ready yet, retry after 5 seconds
+2026-04-17T06:53:38Z [INFO] [/pkg/scan/job.go:255]: Report with mime type application/vnd.security.vulnerability.report; version=1.1 is not ready yet, retry after 5 seconds
+2026-04-17T06:53:43Z [INFO] [/pkg/scan/job.go:255]: Report with mime type application/vnd.security.vulnerability.report; version=1.1 is not ready yet, retry after 5 seconds
+2026-04-17T06:53:48Z [INFO] [/pkg/scan/job.go:255]: Report with mime type application/vnd.security.vulnerability.report; version=1.1 is not ready yet, retry after 5 seconds
+2026-04-17T06:53:53Z [INFO] [/pkg/scan/job.go:255]: Report with mime type application/vnd.security.vulnerability.report; version=1.1 is not ready yet, retry after 5 seconds
+2026-04-17T06:53:58Z [INFO] [/pkg/scan/job.go:255]: Report with mime type application/vnd.security.vulnerability.report; version=1.1 is not ready yet, retry after 5 seconds
+2026-04-17T06:54:03Z [INFO] [/pkg/scan/job.go:255]: Report with mime type application/vnd.security.vulnerability.report; version=1.1 is not ready yet, retry after 5 seconds
+2026-04-17T06:54:08Z [INFO] [/pkg/scan/job.go:255]: Report with mime type application/vnd.security.vulnerability.report; version=1.1 is not ready yet, retry after 5 seconds
+2026-04-17T06:54:13Z [INFO] [/pkg/scan/job.go:255]: Report with mime type application/vnd.security.vulnerability.report; version=1.1 is not ready yet, retry after 5 seconds
+2026-04-17T06:54:18Z [INFO] [/pkg/scan/job.go:255]: Report with mime type application/vnd.security.vulnerability.report; version=1.1 is not ready yet, retry after 5 seconds
+2026-04-17T06:54:23Z [INFO] [/pkg/scan/job.go:255]: Report with mime type application/vnd.security.vulnerability.report; version=1.1 is not ready yet, retry after 5 seconds
+2026-04-17T06:54:28Z [INFO] [/pkg/scan/job.go:255]: Report with mime type application/vnd.security.vulnerability.report; version=1.1 is not ready yet, retry after 5 seconds
+2026-04-17T06:54:33Z [INFO] [/pkg/scan/job.go:255]: Report with mime type application/vnd.security.vulnerability.report; version=1.1 is not ready yet, retry after 5 seconds
+2026-04-17T06:54:38Z [INFO] [/pkg/scan/job.go:255]: Report with mime type application/vnd.security.vulnerability.report; version=1.1 is not ready yet, retry after 5 seconds
+2026-04-17T06:54:43Z [INFO] [/pkg/scan/job.go:255]: Report with mime type application/vnd.security.vulnerability.report; version=1.1 is not ready yet, retry after 5 seconds
+2026-04-17T06:54:48Z [INFO] [/pkg/scan/job.go:255]: Report with mime type application/vnd.security.vulnerability.report; version=1.1 is not ready yet, retry after 5 seconds
+2026-04-17T06:54:53Z [INFO] [/pkg/scan/job.go:255]: Report with mime type application/vnd.security.vulnerability.report; version=1.1 is not ready yet, retry after 5 seconds
+2026-04-17T06:54:58Z [INFO] [/pkg/scan/job.go:255]: Report with mime type application/vnd.security.vulnerability.report; version=1.1 is not ready yet, retry after 5 seconds
+2026-04-17T06:55:03Z [INFO] [/pkg/scan/job.go:255]: Report with mime type application/vnd.security.vulnerability.report; version=1.1 is not ready yet, retry after 5 seconds
+2026-04-17T06:55:08Z [INFO] [/pkg/scan/job.go:255]: Report with mime type application/vnd.security.vulnerability.report; version=1.1 is not ready yet, retry after 5 seconds
+2026-04-17T06:55:13Z [INFO] [/pkg/scan/job.go:255]: Report with mime type application/vnd.security.vulnerability.report; version=1.1 is not ready yet, retry after 5 seconds
+2026-04-17T06:55:18Z [INFO] [/pkg/scan/job.go:255]: Report with mime type application/vnd.security.vulnerability.report; version=1.1 is not ready yet, retry after 5 seconds
+2026-04-17T06:55:23Z [INFO] [/pkg/scan/job.go:255]: Report with mime type application/vnd.security.vulnerability.report; version=1.1 is not ready yet, retry after 5 seconds
+2026-04-17T06:55:28Z [INFO] [/pkg/scan/job.go:255]: Report with mime type application/vnd.security.vulnerability.report; version=1.1 is not ready yet, retry after 5 seconds
+2026-04-17T06:55:33Z [INFO] [/pkg/scan/job.go:255]: Report with mime type application/vnd.security.vulnerability.report; version=1.1 is not ready yet, retry after 5 seconds
+2026-04-17T06:55:38Z [INFO] [/pkg/scan/job.go:255]: Report with mime type application/vnd.security.vulnerability.report; version=1.1 is not ready yet, retry after 5 seconds
+2026-04-17T06:55:43Z [INFO] [/pkg/scan/job.go:255]: Report with mime type application/vnd.security.vulnerability.report; version=1.1 is not ready yet, retry after 5 seconds
+2026-04-17T06:55:48Z [INFO] [/pkg/scan/job.go:255]: Report with mime type application/vnd.security.vulnerability.report; version=1.1 is not ready yet, retry after 5 seconds
+2026-04-17T06:55:53Z [INFO] [/pkg/scan/job.go:255]: Report with mime type application/vnd.security.vulnerability.report; version=1.1 is not ready yet, retry after 5 seconds
+2026-04-17T06:55:58Z [INFO] [/pkg/scan/job.go:255]: Report with mime type application/vnd.security.vulnerability.report; version=1.1 is not ready yet, retry after 5 seconds
+2026-04-17T06:56:03Z [INFO] [/pkg/scan/job.go:255]: Report with mime type application/vnd.security.vulnerability.report; version=1.1 is not ready yet, retry after 5 seconds
+2026-04-17T06:56:08Z [INFO] [/pkg/scan/job.go:255]: Report with mime type application/vnd.security.vulnerability.report; version=1.1 is not ready yet, retry after 5 seconds
+2026-04-17T06:56:13Z [INFO] [/pkg/scan/job.go:255]: Report with mime type application/vnd.security.vulnerability.report; version=1.1 is not ready yet, retry after 5 seconds
+2026-04-17T06:56:18Z [INFO] [/pkg/scan/job.go:255]: Report with mime type application/vnd.security.vulnerability.report; version=1.1 is not ready yet, retry after 5 seconds
+2026-04-17T06:56:23Z [INFO] [/pkg/scan/job.go:255]: Report with mime type application/vnd.security.vulnerability.report; version=1.1 is not ready yet, retry after 5 seconds
+2026-04-17T06:56:28Z [INFO] [/pkg/scan/job.go:255]: Report with mime type application/vnd.security.vulnerability.report; version=1.1 is not ready yet, retry after 5 seconds
+2026-04-17T06:56:33Z [INFO] [/pkg/scan/job.go:255]: Report with mime type application/vnd.security.vulnerability.report; version=1.1 is not ready yet, retry after 5 seconds
+2026-04-17T06:56:38Z [INFO] [/pkg/scan/job.go:255]: Report with mime type application/vnd.security.vulnerability.report; version=1.1 is not ready yet, retry after 5 seconds
+2026-04-17T06:56:43Z [INFO] [/pkg/scan/job.go:255]: Report with mime type application/vnd.security.vulnerability.report; version=1.1 is not ready yet, retry after 5 seconds
+2026-04-17T06:56:48Z [ERROR] [/pkg/scan/job.go:294]: scan job: fetch scan report, mimetype application/vnd.security.vulnerability.report; version=1.1: running trivy wrapper: running trivy: exit status 1: 2026-04-17T06:43:42Z	WARN	'--vuln-type' is deprecated. Use '--pkg-types' instead.
+2026-04-17T06:43:42Z	INFO	[vulndb] Need to update DB
+2026-04-17T06:43:42Z	INFO	[vulndb] Downloading vulnerability DB...
+2026-04-17T06:43:42Z	INFO	[vulndb] Downloading artifact...	repo="mirror.gcr.io/aquasec/trivy-db:2"
+2026-04-17T06:56:46Z	FATAL	Fatal error	run error: init error: DB error: failed to download vulnerability DB: OCI artifact error: failed to download vulnerability DB: failed to download artifact from mirror.gcr.io/aquasec/trivy-db:2: OCI repository error: 2 errors occurred:
+	* Get "https://mirror.gcr.io/v2/": dial tcp 64.233.170.82:443: connect: connection timed out; Get "http://mirror.gcr.io/v2/": dial tcp 64.233.170.82:80: connect: connection timed out
+	* Get "https://mirror.gcr.io/v2/": dial tcp 64.233.170.82:443: connect: connection timed out; Get "http://mirror.gcr.io/v2/": dial tcp 64.233.170.82:80: connect: connection timed out
+
+
+: general response handler: unexpected status code: 500, expected: 200
