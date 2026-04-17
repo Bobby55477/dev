@@ -1,38 +1,4 @@
-2026-04-17T05:56:46Z [ERROR] [/controller/proxy/controller.go:300]: failed to pull blob, error Get "https://docker-images-prod.6aa30f8b08e16409b46e0173d6de2f56.r2.cloudflarestorage.com/registry-v2/docker/registry/v2/blobs/sha256/92/92842f25412de42158fa3fb5c61e782bea659b6396672c3be3ee1d4f7e5eab77/data?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=f1baa2dd9b876aeb89efebbfc9e5d5f4%2F20260417%2Fauto%2Fs3%2Faws4_request&X-Amz-Date=20260417T055616Z&X-Amz-Expires=1200&X-Amz-SignedHeaders=host&X-Amz-Signature=fd68edbe51945163754eef039c99220e29b6e9513e9ee824468679e3700c024d": dial tcp 172.64.66.1:443: i/o timeout
-2026-04-17T05:56:46Z [ERROR] [/lib/http/error.go:58]: {"errors":[{"code":"UNKNOWN","message":"unknown: Get \"https://docker-images-prod.6aa30f8b08e16409b46e0173d6de2f56.r2.cloudflarestorage.com/registry-v2/docker/registry/v2/blobs/sha256/92/92842f25412de42158fa3fb5c61e782bea659b6396672c3be3ee1d4f7e5eab77/data?X-Amz-Algorithm=AWS4-HMAC-SHA256\u0026X-Amz-Credential=f1baa2dd9b876aeb89efebbfc9e5d5f4%2F20260417%2Fauto%2Fs3%2Faws4_request\u0026X-Amz-Date=20260417T055616Z\u0026X-Amz-Expires=1200\u0026X-Amz-SignedHeaders=host\u0026X-Amz-Signature=fd68edbe51945163754eef039c99220e29b6e9513e9ee824468679e3700c024d\": dial tcp 172.64.66.1:443: i/o timeout"}]}
-
-
-(failed reverse-i-search)`': docker pull centralharbordc.finopaymentbank.in:8081/^Cckerhub-proxy/library/ubuntu
-(failed reverse-i-search)`': docker pull centralharbordc.finopaymentbank.in:8081/^Cckerhub-proxy/library/ubuntu
-[root@centralharbordc ~]# curl -I https://hub.docker.com
-HTTP/2 200
-date: Fri, 17 Apr 2026 06:00:33 GMT
-content-type: text/html; charset=utf-8
-cf-ray: 9ed935c65fe2613f-BOM
-x-ratelimit-limit: 180
-x-ratelimit-reset: 1776405693
-x-ratelimit-remaining: 180
-x-ratelimit-ip: 103.231.77.140
-set-cookie: dckr-sessid=Im0weWJNeE5oVF95WWthSGZ3NFJxN3ci.qibvjF2BF4Kaa9mTlSzItBe0bMnZEsbWArao%2Bj0I%2BOM; Path=/; HttpOnly; Secure; SameSite=Lax
-set-cookie: __cf_bm=dKEaYyMKbWXFnTTDfmDRlhExf08sbGQwHLj93OiPSVk-1776405633-1.0.1.1-FEII8mTJnAnRbFIEqrBPdkhnWFYTnrZ9z7GGqJawrD8LIYH.wkj7P0F9v5.QswqCAUbC9_gMMgNMkiibIWdRVw4loQBNgNUJ56kggCcoo0M; path=/; expires=Fri, 17-Apr-26 06:30:33 GMT; domain=.hub.docker.com; HttpOnly; Secure; SameSite=None
-set-cookie: _cfuvid=TWyGL6_kimOeTFOA_EoPgAiNB7HGJ8ipYZ_j4OC.5Ww-1776405633232-0.0.1.1-604800000; path=/; domain=.hub.docker.com; HttpOnly; Secure; SameSite=None
-x-docker-app-version: v8162
-x-trace-id: a54efcfe8e7c7cb8d7eb54e54b83124f
-x-cache-hit: true
-strict-transport-security: max-age=31536000
-strict-transport-security: max-age=31536000
-x-frame-options: deny
-x-content-type-options: nosniff
-x-xss-protection: 1; mode=block
-cf-cache-status: DYNAMIC
-server: cloudflare
-
-[root@centralharbordc ~]# docker pull centralharbordc.finopaymentbank.in:8081/dockerhub-proxy/library/ubuntu
-Using default tag: latest
-latest: Pulling from dockerhub-proxy/library/ubuntu
-^C[root@centralharbordc ~]docker pull centralharbordc.finopaymentbank.in:8081/dockerhub-proxy/ubuntu
-Using default tag: latest
-latest: Pulling from dockerhub-proxy/ubuntu
-^C[root@centralharbordc ~]#
-
-
+[root@centralharbordc ~]# curl -u admin:centr@l#20262026  http://centralharbordc.finopaymentbank.in:8081/api/v2.0/projects/
+[{"creation_time":"2026-04-13T07:03:18.674Z","current_user_role_id":1,"current_user_role_ids":[1],"cve_allowlist":{"creation_time":"0001-01-01T00:00:00.000Z","id":2,"items":[],"project_id":2,"update_time":"0001-01-01T00:00:00.000Z"},"metadata":{"auto_sbom_generation":"false","auto_scan":"true","enable_content_trust":"false","enable_content_trust_cosign":"false","prevent_vul":"false","public":"true","reuse_sys_cve_allowlist":"true","severity":"low"},"name":"dctodrsync","owner_id":1,"owner_name":"admin","project_id":2,"repo_count":2,"update_time":"2026-04-13T07:03:18.674Z"},{"creation_time":"2026-04-17T05:54:46.551Z","current_user_role_id":1,"current_user_role_ids":[1],"cve_allowlist":{"creation_time":"0001-01-01T00:00:00.000Z","id":6,"items":[],"project_id":5,"update_time":"0001-01-01T00:00:00.000Z"},"metadata":{"auto_sbom_generation":"false","auto_scan":"false","enable_content_trust_cosign":"false","max_upstream_conn":"-1","prevent_vul":"true","proxy_speed_kb":"-1024","public":"true","retention_id":"2","reuse_sys_cve_allowlist":"true","severity":"low"},"name":"dockerhub-proxy","owner_id":1,"owner_name":"admin","project_id":5,"registry_id":4,"repo_count":0,"update_time":"2026-04-17T05:54:46.551Z"},{"creation_time":"2026-04-13T14:31:33.369Z","current_user_role_id":1,"current_user_role_ids":[1],"cve_allowlist":{"creation_time":"0001-01-01T00:00:00.000Z","id":5,"items":[],"project_id":4,"update_time":"0001-01-01T00:00:00.000Z"},"metadata":{"max_upstream_conn":"-1","proxy_speed_kb":"-1","public":"true","retention_id":"1"},"name":"karplexus-azure","owner_id":1,"owner_name":"admin","project_id":4,"registry_id":3,"repo_count":0,"update_time":"2026-04-13T14:31:33.369Z"},{"creation_time":"2026-04-13T06:57:57.743Z","current_user_role_id":1,"current_user_role_ids":[1],"cve_allowlist":{"creation_time":"0001-01-01T00:00:00.000Z","id":1,"items":[],"project_id":1,"update_time":"0001-01-01T00:00:00.000Z"},"metadata":{"public":"true"},"name":"library","owner_id":1,"owner_name":"admin","project_id":1,"repo_count":0,"update_time":"2026-04-13T06:57:57.743Z"}]
+[root@centralharbordc ~]# curl -u admin:centr@l#20262026  http://centralharbordc.finopaymentbank.in:8081/api/v2.0/projects/dockerhub-proxy/repositories
+[]
